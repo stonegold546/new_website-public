@@ -40,21 +40,21 @@
 <p>I came across a 2004 <em>Stats in Medicine</em> paper by Moser and Coombs<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> with the title, &ldquo;Odds ratios for a continuous outcome variable without dichotomizing&rdquo; almost a year ago now. I only read it closely more recently. The authors reiterate the point that you throw away information when you dichotomize the outcome. And they show that you don&rsquo;t really need to dichotomize the outcome to obtain the odds ratios. The nice thing about the paper is that until they get into the equations that span several lines, the paper is easy to follow. Here&rsquo;s the summary:</p>
 <!-- When you model the binary outcome, your model is essentially an attempt to recreate the model on the original continuous scale. If using logistic regression, you're assuming logistic error for the original continuous outcome, if probit regression, you're assuming normal error for the continuous outcome. If that is the case, why not directly model the linear outcome? Their argument goes something like this: -->
 <ol>
-<li>You believe that $\alpha + X\beta + \epsilon = y_c$, where $y_c$ is a continuous outcome i.e. some variables, $X$, multiplied by their coefficients, $\beta$, plus the intercept, $\alpha$, and some error, $\epsilon$, result in your continuous outcome, $y_c$.</li>
-<li>You believe that some threshold $(t)$ is clinically significant, so you cut $y_c$ at $t$ such that all values of $y_c$ exceeding $t$ are now 1 and all others are 0; we&rsquo;ll call this new variable $y_b$.</li>
-<li>You then perform logistic regression on $y_b$, which really is just an attempt to retrieve the original model, $\alpha + X\beta + \epsilon = y_c$. Why not directly model $y_c$?</li>
+<li>You believe that \(\alpha + X\beta + \epsilon = y_c\), where \(y_c\) is a continuous outcome i.e. some variables, \(X\), multiplied by their coefficients, \(\beta\), plus the intercept, \(\alpha\), and some error, \(\epsilon\), result in your continuous outcome, \(y_c\).</li>
+<li>You believe that some threshold \((t)\) is clinically significant, so you cut \(y_c\) at \(t\) such that all values of \(y_c\) exceeding \(t\)are now 1 and all others are 0; we&rsquo;ll call this new variable \(y_b\).</li>
+<li>You then perform logistic regression on \(y_b\), which really is just an attempt to retrieve the original model, \(\alpha + X\beta + \epsilon = y_c\). Why not directly model \(y_c\)?</li>
 </ol>
 <p>A few points are worth making about this:</p>
 <ol>
 <li>We can summarize the above as: $$y_b = 1 \quad \mathrm{if}\quad \alpha + X\beta + \epsilon &gt; t \quad \mathrm{otherwise}\quad y_b = 0$$.</li>
-<li>If we adjust the threshold, say drop it by 1 point, it does not change $X\beta$, it only affects the intercept: $$y_b = 1\quad \mathrm{if}\quad \alpha - 1 + X\beta + \epsilon &gt; t - 1$$</li>
-<li>The point here it that the only coefficient affected by changing the threshold is the intercept, $\alpha$; the $\beta$ are not affected by adjusting the threshold. So the relationships we do care about are not affected by the threshold &ndash; more on this later.</li>
-<li>Finally, in logistic regression, we do not estimate $\epsilon$, we assume it is standard logistic. That affects things such that if we want to use the linear regression on $y_c$ to obtain the results from logistic regression, we need to make some adjustments.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li>If we adjust the threshold, say drop it by 1 point, it does not change \(X\beta\), it only affects the intercept: $$y_b = 1\quad \mathrm{if}\quad \alpha - 1 + X\beta + \epsilon &gt; t - 1$$</li>
+<li>The point here it that the only coefficient affected by changing the threshold is the intercept, \(\alpha\); the \(\beta\)are not affected by adjusting the threshold. So the relationships we do care about are not affected by the threshold &ndash; more on this later.</li>
+<li>Finally, in logistic regression, we do not estimate \(\epsilon\), we assume it is standard logistic. That affects things such that if we want to use the linear regression on \(y_c\)to obtain the results from logistic regression, we need to make some adjustments.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
 </ol>
 <p>So here&rsquo;s what they recommend:</p>
 <ul>
-<li>Estimate the linear model on the continuous outcome, $y_c$</li>
-<li>Your coefficients are $\beta$, then transform them: $$\frac{\pi}{\sigma\times\sqrt{3}}\beta\quad\text{where }\sigma = \text{ residual standard deviation of regression}$$</li>
+<li>Estimate the linear model on the continuous outcome, \(y_c\)</li>
+<li>Your coefficients are \(\beta\), then transform them: $$\frac{\pi}{\sigma\times\sqrt{3}}\beta\quad\text{where }\sigma = \text{ residual standard deviation of regression}$$</li>
 <li>These are your log odds, you can exponentiate them to obtain odds ratios.</li>
 <li>We do not care for the intercept from this linear regression because it will be affected by the threshold, and we are using an approach that is blind to the threshold.</li>
 </ul>

@@ -297,7 +297,7 @@ ggplot(raschdat1.long, aes(x = tot, y = ability)) +
 <p><img src="/img/posts/rasch_bin_logistic/pp_mlm.png" alt="PERS_PAR_MLM"></p>
 <p>Both plots are not the same, though they overlap for the most part. Because estimation of person parameters is more tedious in CML, I&rsquo;d trust the multilevel values.</p>
 <h4 id="item-fit-using-mean-square">Item fit using mean square</h4>
-<p>For the outfit MSQ, you square the residual (on the response scale, or actual score - predicted probability), and divide it by the predicted probability $\times$ (1 - predicted probability). The average of this value for each item is its outfit mean square. The average of this value for each person is their outfit mean square.</p>
+<p>For the outfit MSQ, you square the residual (on the response scale, or actual score - predicted probability), and divide it by the predicted probability \(\times\) (1 - predicted probability). The average of this value for each item is its outfit mean square. The average of this value for each person is their outfit mean square.</p>
 <p>For the infit MSQ, you perform the same computations. However, you perform these computations within the items for item infit, and within the persons for person infit. This is a vague; for some reason, I had issues typing out the formula in MathJax. See slides 14 and 15 <a href="http://statmath.wu-wien.ac.at/people/hatz/psychometrics/10w/RM_handouts_5.pdf">here</a> for formulae.</p>
 <p>eRm one-liner:</p>
 <pre><code class="language-ruby">itemfit(person.parameter(res.rasch)) # Not printed

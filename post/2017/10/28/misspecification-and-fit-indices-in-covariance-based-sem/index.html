@@ -48,18 +48,18 @@
 <p>The fit indices MAH write about are global fit indices (hereafter GFIs) and they detect all types of model misspecifications. However, as MAH point out, not all model misspecifications are problematic. Consider order effects, two items may have correlated errors independent of their shared factor simply because one follows the other (serial correlation). The absence of this correlated error in a CFA (the default) would negatively impact any global fit index. Moreover, global fit indices do not tell you what your model misspecifications are.</p>
 <p><em>The sections that follow may include details that not everyone would like to read about, you can skip to the <a href="#lavaan">bottom of the page for annotated lavaan code</a> for what to do instead of using global fit indices.</em></p>
 <p>MAH reference a 2009 paper by Satis, Satorra and van der Veld,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> hereafter <em>SSV</em>, that addresses this issue. SSV laid out a method for investigating model misspecifications that involves the use of modification indices (MI), expected parameter change (EPC), theory and power analysis. The EPC is the value by which a constrained relationship would change from zero if it was freed to be estimated by the model. I believe researchers are familiar with MIs and often use them to fix model misspecifications with the aim of obtaining GFIs that their reviewers will accept. The relationship between MI and EPC is:</p>
-<p>$MI = (EPC/\sigma)^2$</p>
-<p>where $\sigma$ is the standard error of the EPC.</p>
+<p>$$MI = (EPC/\sigma)^2$$</p>
+<p>where \(\sigma\) is the standard error of the EPC.</p>
 <p>SSV suggest the following framework:</p>
 <ul>
-<li>specify an unacceptable level of model misspecification $(\delta)$ for any constrained relationship in your model. They recommend thinking about your context, or:
+<li>specify an unacceptable level of model misspecification \((\delta)\) for any constrained relationship in your model. They recommend thinking about your context, or:
 <ul>
 <li>for factor loadings, absolute value &gt; .4</li>
 <li>for correlated errors, absolute value &gt; .1</li>
 </ul>
 </li>
-<li>calculate a noncentrality parameter, $ncp=(\delta/\sigma)^2$</li>
-<li>this $ncp$ follows a noncental-$\chi^2$ distribution which you can use to calculate the statistical power to detect $\delta$, the unnaceptable degree of model misspecification, for each constrained relationship.</li>
+<li>calculate a noncentrality parameter, \(ncp=(\delta/\sigma)^2\)</li>
+<li>this \(ncp\) follows a noncental-\(\chi^2\) distribution which you can use to calculate the statistical power to detect \(\delta\), the unnaceptable degree of model misspecification, for each constrained relationship.</li>
 </ul>
 <div id="lavaan">
 <p>Next, the following decision rules:</p>

@@ -44,10 +44,10 @@
 <p>If researchers stop at the low bar of any kind of improvement, the almost 100% <em>probability of efficacy</em> is very impressive. However, consider any useful level of practical significance and the probability of practical significance plummets. Researchers can produce this type of graph for any effect or relation that is of interest, and the graph provides a transparent way for readers to assess the effect/relation. Some readers have high standards, others have low standards. Given sufficient familiarity with the scale of the effect size, different readers can come to different evaluations given the transparent reporting.</p>
 <hr>
 <p>I did not run Kruschke&rsquo;s exact model. The model I ran was:</p>
-<p>$$\mathbf y \sim t\big(\nu, \beta_0 + \beta_1\times\mathbf x, \exp(\theta_0 + \theta_1\times \mathbf x)\big)$$
-$$\nu \sim \mathrm{gamma}(2, 0.1),\quad \beta_0 \sim \mathrm{Cauchy}(0, 5),\quad \beta_1 \sim \mathcal{N}(0, 15 / 1.96)$$
-$$\theta_0 \sim t(3, 0, 1),\quad \theta_1\sim \mathcal{N}(0, \ln(3) / 1.96)$$</p>
-<p>where $\mathbf y$ was the outcome variable and $\mathbf x$ was the treatment indicator. And I calculated the probability that $\beta_1&gt;\text{effect}$ for different values of the effect using the posterior values of $\beta_1$.</p>
+<p>$$\mathbf y \sim t\big(\nu, \beta_0 + \beta_1\times\mathbf x, \exp(\theta_0 + \theta_1\times \mathbf x)\big)$$</p>
+<p>$$\nu \sim \mathrm{gamma}(2, 0.1),\quad \beta_0 \sim \mathrm{Cauchy}(0, 5),\quad \beta_1 \sim \mathcal{N}(0, 15 / 1.96)$$</p>
+<p>$$\theta_0 \sim t(3, 0, 1),\quad \theta_1\sim \mathcal{N}(0, \ln(3) / 1.96)$$</p>
+<p>where \(\mathbf y\) was the outcome variable and \(\mathbf x\) was the treatment indicator. And I calculated the probability that \(\beta_1&gt;\text{effect}\) for different values of the effect using the posterior values of \(\beta_1\).</p>
 <p>The code is available here:</p>
 <style type="text/css">
   .gist-data {max-height: 200px;}

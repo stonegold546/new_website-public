@@ -40,8 +40,8 @@
 <p>$$
 y_{pi} = \theta_p + \beta_i + \epsilon
 $$</p>
-<p>where $y_{pi}$ is the response of person $p$ to item $i$, $\theta_p$ is the random intercept that varies by person and is assumed to be normal with mean zero and standard deviation $\alpha$ $\big(\mathcal{N}(0, \alpha^2)\big)$, $\beta_i$ are the coefficients of the item dummies, and $\epsilon$ is the residual (level 1) error assumed normal with mean zero and standard deviation $\sigma,\ \mathcal{N}(0, \sigma^2)$.</p>
-<p>Anyone familiar with multilevel regression can fit this basic random-intercept model. Shape your person by item data to &ldquo;long form&rdquo; where each row contains a person ID, an item ID and the item response. Make the item response the outcome, make each item into a dummy variable as predictors (at level 1) and place a random intercept on the person. Your random intercept standard deviation is $\alpha$, residual standard deviation (or level one error) is $\sigma$ and the item dummies are $\beta_i$. If your software permits, remove the fixed intercept and use all item dummies. Finally, $\theta_p$ represents the latent score for each individual $p$.</p>
+<p>where \(y_{pi}\) is the response of person \(p\) to item \(i\), \(\theta_p\) is the random intercept that varies by person and is assumed to be normal with mean zero and standard deviation \(\alpha\) \(\big(\mathcal{N}(0, \alpha^2)\big)\), \(\beta_i\) are the coefficients of the item dummies, and \(\epsilon\) is the residual (level 1) error assumed normal with mean zero and standard deviation \(\sigma,\ \mathcal{N}(0, \sigma^2)\).</p>
+<p>Anyone familiar with multilevel regression can fit this basic random-intercept model. Shape your person by item data to &ldquo;long form&rdquo; where each row contains a person ID, an item ID and the item response. Make the item response the outcome, make each item into a dummy variable as predictors (at level 1) and place a random intercept on the person. Your random intercept standard deviation is \(\alpha\), residual standard deviation (or level one error) is \(\sigma\) and the item dummies are \(\beta_i\). If your software permits, remove the fixed intercept and use all item dummies. Finally, \(\theta_p\) represents the latent score for each individual \(p\).</p>
 <p>To demonstrate, I use the HolzingerSwineford dataset. There are 9 items, items 1 to 3 load on factor 1, 4 to 6 on factor 2, and 7 to 9 on factor 3.</p>
 <pre><code class="language-r">library(lavaan)
 
@@ -64,7 +64,7 @@ lmer(score ~ 0 + factor(item.no) + (1 | ID), dat.l, REML = FALSE)
 # Residual             0.9694  
 # Number of obs: 2709, groups:  ID, 301
 </code></pre>
-<p>The model above fit with ML not REML is identical to a unidimensional CFA where we constrain all the item loadings to be the same value and the item errors to be the same value. The random intercept standard deviation, $\alpha$, is the factor loading for all items and $\sigma^2$ is the item error variance for all items. To get the standardized loading which we will call $\lambda$, use:</p>
+<p>The model above fit with ML not REML is identical to a unidimensional CFA where we constrain all the item loadings to be the same value and the item errors to be the same value. The random intercept standard deviation, \(\alpha\), is the factor loading for all items and \(\sigma^2\) is the item error variance for all items. To get the standardized loading which we will call \(\lambda\), use:</p>
 <p>$$\lambda = \frac{\alpha}{\sqrt{\alpha^2+\sigma^2}} = \frac{0.5758}{\sqrt{0.5758^2+0.9694^2}}=0.5107$$</p>
 <p>The lavaan model below should confirm this to be true. Note that in the lavaan syntax, the factor is standardized to have variance of 1 using <code>std.lv = TRUE</code>. The item dummies (not shown) from lme4 are also the CFA item intercepts.</p>
 <pre><code class="language-r">parameterEstimates(sem(
@@ -80,12 +80,12 @@ lmer(score ~ 0 + factor(item.no) + (1 | ID), dat.l, REML = FALSE)
 # 10  x1 ~~  x1     f 0.940   0.739
 # 11  x2 ~~  x2     f 0.940   0.739
 </code></pre>
-<p>The standardized loading has a similar formula to the (residual) intraclass correlation coefficient (ICC) which is $\frac{\alpha^2}{\alpha^2+\sigma^2}$. So we have that $\lambda=\sqrt{\mathrm{ICC}}$. This is in line with thinking of standardized loadings as correlation coefficients and ICCs as $R^2$.</p>
+<p>The standardized loading has a similar formula to the (residual) intraclass correlation coefficient (ICC) which is \(\frac{\alpha^2}{\alpha^2+\sigma^2}\). So we have that \(\lambda=\sqrt{\mathrm{ICC}}\). This is in line with thinking of standardized loadings as correlation coefficients and ICCs as \(R^2\).</p>
 <p>Now, everyone familiar with CFA knows we almost never constrain all item loadings and item errors to have the same value (for what it&rsquo;s worth, this is what we do in the <a href="/post/2018/01/02/using-glmer-to-perform-rasch-analysis/">Rasch model with binary outcomes</a>). But we will maintain the <em>CFA as regression</em> for as long as possible. Let us extend the model to include multiple factors. To include multiple factors, we create an indicator column in long form that uniquely identifies the factor an item belongs to. And instead of using a single random intercept, we use the factor dummies as random slopes without the random intercept. In this model, we assume:</p>
 <p>$$
 y_{pi} = \mathbf{\theta}_{pf} + \beta_i + \epsilon
 $$</p>
-<p>where $\mathbf{\theta}_{pf}$ instead of being the same at all times for any individual now also depends on the specific factor $f$. Precisely, we assume the latent scores are multivariate normal, $\mathbf{\theta}_{pf}\sim\mathcal{N}_f(\mathbf{0,\Sigma})$, where $f$ is the number of factors, and $\mathbf{\Sigma}$ represents the covariance matrix of the random slopes. The square root of the diagonal of this covariance matrix (i.e. standard deviations of random slopes) will again be the unstandardized factor loadings, $\alpha_f$. The off-diagonal covariances when standardized (i.e. correlations) will be the interfactor correlations. We can again fit this model in <code>lme4</code>:</p>
+<p>where \(\mathbf{\theta}_{pf}\) instead of being the same at all times for any individual now also depends on the specific factor \(f\). Precisely, we assume the latent scores are multivariate normal, \(\mathbf{\theta}_{pf}\sim\mathcal{N}_f(\mathbf{0,\Sigma})\), where \(f\) is the number of factors, and \(\mathbf{\Sigma}\) represents the covariance matrix of the random slopes. The square root of the diagonal of this covariance matrix (i.e. standard deviations of random slopes) will again be the unstandardized factor loadings, \(\alpha_f\). The off-diagonal covariances when standardized (i.e. correlations) will be the interfactor correlations. We can again fit this model in <code>lme4</code>:</p>
 <pre><code class="language-r"># Assign item to factors
 dat.l$Fs &lt;- ((dat.l$item.no - 1) %/% 3) + 1
 
@@ -126,7 +126,7 @@ lmer(score ~ 0 + factor(item) + (0 + factor(Fs) | ID), dat.l, REML = FALSE)
 <p>$$
 y_{pi} = \mathbf{\theta}_{pf} + \beta_i + \epsilon_i
 $$</p>
-<p>where we permit the residual error, $\epsilon_i$, to be different depending on the item. This is a heteroskedastic regression model. One would have to switch to from <code>lme4</code> to <code>nlme</code> or <code>glmmTMB</code> in R to estimate it; it should be possible in HLM. In <code>lavaan</code>, the model syntax would be:</p>
+<p>where we permit the residual error, \(\epsilon_i\), to be different depending on the item. This is a heteroskedastic regression model. One would have to switch to from <code>lme4</code> to <code>nlme</code> or <code>glmmTMB</code> in R to estimate it; it should be possible in HLM. In <code>lavaan</code>, the model syntax would be:</p>
 <pre><code class="language-r"># Drop the error variance constraints
 &quot;F1 =~ a * X1 + a * X2 + a * X3\nF2 =~ b * X4 + b * X5 + b * X6\nF3 =~c * X7 + c * X8 + c * X9&quot;
 </code></pre>
@@ -134,15 +134,15 @@ $$</p>
 <p>$$
 y_{pi} = \alpha_i\theta_{pf} + \beta_i + \epsilon_i
 $$</p>
-<p>$\mathbf{\theta}_{pf}$ is still multivariate normal, but with variance $\mathbf{1},\ \mathbf{\theta}_{pf}\sim\mathcal{N}_f(\mathbf{0,1})$. The most interesting inclusion is that we multiply the latent scores by an item coefficient, $\alpha_i$.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Note that $\alpha$ consistently represents the unstandardized loadings in this demonstration. Here, instead of being constant or varying by factor, it varies by item.</p>
+<p>\(\mathbf{\theta}_{pf}\) is still multivariate normal, but with variance \(\mathbf{1},\ \mathbf{\theta}_{pf}\sim\mathcal{N}_f(\mathbf{0,1})\). The most interesting inclusion is that we multiply the latent scores by an item coefficient, \(\alpha_i\).<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Note that \(\alpha\) consistently represents the unstandardized loadings in this demonstration. Here, instead of being constant or varying by factor, it varies by item.</p>
 <p>Bayesian software can fit a complicated model like this. We&rsquo;d have to specify priors for the different components of this equation. Page 144 of the Stan manual provides some priors for the 2PL item-response theory model that we can apply here as a starting point:</p>
 <ul>
-<li>loadings will be log-normal constraining them to be positive, $\alpha_i\sim\mathrm{Lognormal}(0,\sigma_\alpha)$. For $\sigma_\alpha$, we can assume it&rsquo;s half-Cauchy, $\sigma_\alpha\sim C^{+}(0, 2.5)$.</li>
+<li>loadings will be log-normal constraining them to be positive, \(\alpha_i\sim\mathrm{Lognormal}(0,\sigma_\alpha)\). For \(\sigma_\alpha\), we can assume it&rsquo;s half-Cauchy, \(\sigma_\alpha\sim C^{+}(0, 2.5)\).</li>
 <li>there is usually enough information to estimate item intercepts/difficulties, we can use a uniform prior</li>
-<li>item errors can be assumed to be inverse gamma, $\epsilon_i\sim\mathrm{InvGamma}(1,1)$.</li>
-<li>the latent scores are multivariate normal, $\mathbf{\theta}_{pf}\sim\mathcal{N}_f(\mathbf{0,1})$</li>
+<li>item errors can be assumed to be inverse gamma, \(\epsilon_i\sim\mathrm{InvGamma}(1,1)\).</li>
+<li>the latent scores are multivariate normal, \(\mathbf{\theta}_{pf}\sim\mathcal{N}_f(\mathbf{0,1})\)</li>
 </ul>
-<p>The one point requiring additional comments is the multivariate normal prior for $\mathbf{\theta}_{pf}$. For a positive-definite correlation matrix, $\mathbf{R}$, we can apply the Cholesky decomposition: $\mathbf{R} = \mathbf{L}\mathbf{L}^*$. In Stan, it is computationally more convenient to apply a prior on $\mathbf{L}$ and generate the multivariate normal latent scores using $\mathbf{L}$. The recommended choice of prior for $\mathbf{L}$ is the LKJ-prior.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>The one point requiring additional comments is the multivariate normal prior for \(\mathbf{\theta}_{pf}\). For a positive-definite correlation matrix, \(\mathbf{R}\), we can apply the Cholesky decomposition: \(\mathbf{R} = \mathbf{L}\mathbf{L}^*\). In Stan, it is computationally more convenient to apply a prior on \(\mathbf{L}\) and generate the multivariate normal latent scores using \(\mathbf{L}\). The recommended choice of prior for \(\mathbf{L}\) is the LKJ-prior.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>In Stan syntax, the required data are:</p>
 <pre><code class="language-r">data {
   real g_alpha; // for inverse gamma
@@ -335,7 +335,7 @@ t(apply(coefs, 2, function (x) {
 <p>This makes the model non-linear in its parameters showing why software for generalized linear mixed models cannot fit this model.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>I&rsquo;m guessing older software manuals may recommend the inverse-Wishart prior for $\mathbf{\Sigma}$. But see <a href="https://docs.pymc.io/notebooks/LKJ.html">HERE</a> as starting point for comments on LKJ-prior. As a funny side note, <a href="https://www.sciencedirect.com/science/article/pii/S0047259X09000876">LKJ is an acronym for the researchers who recommended this approach</a>, the last author is Harry, last name, Joe. And he developed an earlier form of the method. So in the paper by LKJ, you see references to <em>Joe&rsquo;s method</em> which seems out of place for an academic paper :).&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>I&rsquo;m guessing older software manuals may recommend the inverse-Wishart prior for \(\mathbf{\Sigma}\). But see <a href="https://docs.pymc.io/notebooks/LKJ.html">HERE</a> as starting point for comments on LKJ-prior. As a funny side note, <a href="https://www.sciencedirect.com/science/article/pii/S0047259X09000876">LKJ is an acronym for the researchers who recommended this approach</a>, the last author is Harry, last name, Joe. And he developed an earlier form of the method. So in the paper by LKJ, you see references to <em>Joe&rsquo;s method</em> which seems out of place for an academic paper :).&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

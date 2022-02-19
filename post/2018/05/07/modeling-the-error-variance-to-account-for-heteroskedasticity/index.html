@@ -110,7 +110,7 @@ Residual standard error: 0.9298 on 128 degrees of freedom
 Multiple R-squared:  0.009754,	Adjusted R-squared:  0.002018
 F-statistic: 1.261 on 1 and 128 DF,  p-value: 0.2636
 </code></pre>
-<p>The treatment effect was .22 and not statistically significant, $p = .26$ at an $\alpha$-level of .05. But we know the variances are not homoskedastic because we created the data and this simple diagnostic plot of residuals against fitted values confirms this:</p>
+<p>The treatment effect was .22 and not statistically significant, \(p = .26\) at an \(\alpha\)-level of .05. But we know the variances are not homoskedastic because we created the data and this simple diagnostic plot of residuals against fitted values confirms this:</p>
 <pre><code class="language-ruby">plot(m.ols, 1)
 </code></pre>
 <p><img src="/img/posts/mle_het/Rplot.png" alt="mle0"></p>
@@ -184,7 +184,7 @@ Model 2: m.het, y~dnorm(mean=b_int+b_treat*treat,sd=exp(s_int+s_treat*treat))
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 </code></pre>
-<p>The likelihood ratio test suggests we have improved our model, $\chi^2(1)=59.81,p&lt;.001$.</p>
+<p>The likelihood ratio test suggests we have improved our model, \(\chi^2(1)=59.81,p&lt;.001\).</p>
 <p>So we can confirm that modeling the variance improves precision in this single example. It is easy to code a simulation comparing heteroskedastic MLE to OLS estimation when there is a null effect of zero and we have heteroskedasticity.</p>
 <p>I make one change to the code from above by giving the treatment group a mean of zero, such that there is no mean difference between both groups. The treatment did not improve the outcome, but it homogenized people. I replicate the process 500 times saving the treatment effect from OLS and its p-value, and the treatment effect from heteroskedastic MLE, and its p-value.</p>
 <pre><code class="language-r">res &lt;- replicate(500, {
@@ -275,7 +275,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>In parametric models, we typically assume a distribution is responsible for the observed data, and a lot of the time, we assume the normal distribution. Distributions are defined by their parameters, which are the mean and standard deviation for the normal. The question then is: what values of parameters (mean and standard deviation) maximize the likelihood of the data? In regression models, we are usually asking this question of parameters that predict the mean. If we assume observations are independent, then this likelihood is the product of the individual likelihoods. However, if we work with the log-likelihood, we simplify the problem (for man and machine) to the sum of the logged values instead of product. Next, instead of searching for parameters that maximize the log-likelihood ($ll$), we search for parameters that minimize the negative log-likelihood ($-1 \times ll$) - the same thing in reverse. I believe working with the $-ll$ is largely because it is more conventional for optimization methods to search for minima than maxima. If you attempt to code this by hand using <code>optim()</code>, you can go either way.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>In parametric models, we typically assume a distribution is responsible for the observed data, and a lot of the time, we assume the normal distribution. Distributions are defined by their parameters, which are the mean and standard deviation for the normal. The question then is: what values of parameters (mean and standard deviation) maximize the likelihood of the data? In regression models, we are usually asking this question of parameters that predict the mean. If we assume observations are independent, then this likelihood is the product of the individual likelihoods. However, if we work with the log-likelihood, we simplify the problem (for man and machine) to the sum of the logged values instead of product. Next, instead of searching for parameters that maximize the log-likelihood (\(ll\)), we search for parameters that minimize the negative log-likelihood (\(-1 \times ll\)) - the same thing in reverse. I believe working with the \(-ll\) is largely because it is more conventional for optimization methods to search for minima than maxima. If you attempt to code this by hand using <code>optim()</code>, you can go either way.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
