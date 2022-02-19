@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on James Uanhoro</title>
+    <link>https://www.jamesuanhoro.com/categories/</link>
+    <description>Recent content in Categories on James Uanhoro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>stats</title>
+      <link>https://www.jamesuanhoro.com/categories/stats/</link>
+      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jamesuanhoro.com/categories/stats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rstan</title>
+      <link>https://www.jamesuanhoro.com/categories/rstan/</link>
+      <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jamesuanhoro.com/categories/rstan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rstats</title>
+      <link>https://www.jamesuanhoro.com/categories/rstats/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jamesuanhoro.com/categories/rstats/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
