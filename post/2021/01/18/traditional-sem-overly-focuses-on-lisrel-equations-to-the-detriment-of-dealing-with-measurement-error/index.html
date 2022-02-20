@@ -45,7 +45,7 @@
         <li><a href="#the-actual-difference-is-lisrel">The actual difference is LISREL</a></li>
         <li><a href="#but-too-much-lisrel-not-enough-measurement-error">But too much LISREL, not enough measurement error</a></li>
         <li><a href="#lisrel-works-well-for-normal-data-normal-model-no-manifest-covariates-models">LISREL works well for normal-data normal-model no manifest covariates models</a></li>
-        <li><a href="#covariance-matrix---lisrel-likely-fails-with-discrete-indicators">Covariance matrix \(-&gt;\) LISREL likely fails with discrete indicators</a></li>
+        <li><a href="#covariance-matrix-to-lisrel-likely-fails-with-discrete-indicators">Covariance matrix \(\to\) LISREL likely fails with discrete indicators</a></li>
         <li><a href="#lisrel-likely-fails-for-sems-with-observed-covariates-eg-mimic-model">LISREL likely fails for SEMs with observed covariates (e.g. MIMIC model)</a></li>
         <li><a href="#in-closing-">In closing, &hellip;</a></li>
       </ul>
@@ -87,9 +87,9 @@
 <p>Given the focus on measurement error, the LISREL model is only ideal in the normal-data normal-model situation no manifest covariates. Why so?</p>
 <p>In the regression problem LISREL is set up to solve, the indicators form the outcome variable. Something I&rsquo;ve never heard talked about in an SEM class is how to deal with measurement error in these variables themselves.</p>
 <p>That may be because <em>it is already known</em> that measurement error in linear regression outcomes does not bias estimates, however, there is some loss of power. Hence, continuous indicators with measurement error themselves (likely a given in practice) will result in unbiased estimates &ndash; <a href="https://sci-hub.se/10.1257/jep.15.4.57">see Hausman paper above</a>.</p>
-<h3 id="covariance-matrix---lisrel-likely-fails-with-discrete-indicators">Covariance matrix \(-&gt;\) LISREL likely fails with discrete indicators</h3>
+<h3 id="covariance-matrix-to-lisrel-likely-fails-with-discrete-indicators">Covariance matrix \(\to\) LISREL likely fails with discrete indicators</h3>
 <p>However, measurement error in binary indicators actually leads to biased parameter estimates. Measurement error manifests as miss-classification &ndash; a yes is recorded as no and vice-versa. Low rates of miss-classification can lead to significant bias in estimates. And in my experience, SEM research is often nitpicky over less consequential issues.</p>
-<p>Hence, the standard tetrachoric correlation \(-&gt;\) LISREL pipeline fails to address the measurement error problems one set out to solve.</p>
+<p>Hence, the standard tetrachoric correlation \(\to\) LISREL pipeline fails to address the measurement error problems one set out to solve.</p>
 <p>It actually happens that one approach to this problem is the 4PL IRT model which can be motivated as a measurement error model for binary indicators with miss-classification. What IRT folks call &ldquo;guessing&rdquo; is simply a wrong response classified as a correct one, while &ldquo;slipping&rdquo; is a correct response classified as a wrong one i.e. measurement error.</p>
 <p>However, if you practiced SEM, you might believe that computing tetrachoric correlations is the gold-standard with your major problem being: how trustworthy is your approach to computing tetrachoric correlations?</p>
 <p>But the tetrachoric coefficients are already incorrect in the presence of measurement error. LISREL won&rsquo;t save you. This problem exists for other kinds of discrete data, count, ordinal, &hellip;</p>
