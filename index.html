@@ -36,18 +36,26 @@
 <h2 id="bio">Bio</h2>
 <p>I am an assistant professor in the <a href="https://coe.unt.edu/research-measurement-and-statistics">Research Methodology, Measurement, and Statistics</a> program within the <a href="https://coe.unt.edu/educational-psychology">Department of Educational Psychology</a> at the University of North Texas. I have a background in Information Systems, and in my downtime, I enjoy using my computing skills to develop statistical tools for applied researchers.</p>
 <style>
-  .column-left{
-    float: left;
-    width: max(50%, 400px);
-    text-align: left;
+  * {
+    box-sizing: border-box;
   }
-  .column-right{
+  .column {
     float: left;
-    width: max(50%, 400px);
-    text-align: left;
+    width: 50%;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
   }
 </style>
-<div class="column-left">
+<div class="row">
+<div class="column">
 <h3>Research interests:</h3>
 <ul>
 <li>Applied Bayesian data analysis</li>
@@ -56,7 +64,7 @@
 <li>Statistical software development</li>
 </ul>
 </div>
-<div class="column-right">
+<div class="column">
 <h3>Education:</h3>
 <ul>
 <li>PhD Educational Studies, Ohio State University (2021)</li>
@@ -64,7 +72,7 @@
 <li>BS Information Systems, American University of Nigeria (2012)</li>
 </ul>
 </div>
-<div style="float:left; width:100%;">
+</div>
 <p>I am also a member of the <a href="https://cwa-tseu.org/">Texas State Employees Union (Communication Workers of America, Local 6186)</a>. TSEU is a union for everyone who works for the state of Texas.</p>
 <p>Email: <a href="mailto:james.uanhoro@unt.edu">james.uanhoro@unt.edu</a></p>
 <hr>
