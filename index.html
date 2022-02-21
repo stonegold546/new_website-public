@@ -39,9 +39,15 @@
   * {
     box-sizing: border-box;
   }
-  .column {
+  .column-left {
     float: left;
     width: 50%;
+    padding-right: 15px;
+  }
+  .column-right {
+    float: left;
+    width: 50%;
+    padding-left: 15px;
   }
   .row:after {
     content: "";
@@ -49,13 +55,14 @@
     clear: both;
   }
   @media screen and (max-width: 600px) {
-    .column {
+    .column-left, .column-right {
       width: 100%;
+      padding: 0px;
     }
   }
 </style>
 <div class="row">
-<div class="column">
+<div class="column-left">
 <h3>Research interests:</h3>
 <ul>
 <li>Applied Bayesian data analysis</li>
@@ -64,7 +71,7 @@
 <li>Statistical software development</li>
 </ul>
 </div>
-<div class="column">
+<div class="column-right">
 <h3>Education:</h3>
 <ul>
 <li>PhD Educational Studies, Ohio State University (2021)</li>
