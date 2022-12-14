@@ -61,7 +61,7 @@
 <p>Returning to the current paper, something I&rsquo;d like to do is write out using Wishart distribution for MASEM beginning with fixed-effects, random-effects then dependent covariance matrices. There&rsquo;s something accepted at AERA on this, that I&rsquo;d like to expand on.</p>
 <h2 id="things-i-would-change">Things I would change</h2>
 <ol>
-<li>The way the fit index is computed. It&rsquo;s first computed unstandardized then it is standardized in an unappealing way. I&rsquo;d modify equation 6, such that each \(\psi_{ij} \sim \mathcal{N}(0, \tau_\psi \sigma_{ii} \sigma_{jj})\) such that \(\tau_\psi\) is already standardized.</li>
+<li>The way the fit index is computed. It&rsquo;s first computed unstandardized then it is standardized in an unappealing way. I&rsquo;d modify equation 6, such that each \(\psi_{ij} \sim \mathcal{N}(0, \tau_\psi \sqrt{\sigma_{ii} \sigma_{jj}})\) such that \(\tau_\psi\) is already standardized.</li>
 <li>The reviewers were initially skeptical of SBC and that was partly my fault. So I had to utilize some statistical tests for SBC that I think are pretty reasonable, if reviewers are not satisfied with simple histograms. And by addressing point 1, I should be able to use a wider (less-constrained) prior for \(\tau_\psi\) in the SBC implementation.</li>
 </ol>
 
