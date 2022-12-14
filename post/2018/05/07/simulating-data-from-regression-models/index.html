@@ -160,17 +160,17 @@ par(mfrow = c(1, 1))
 </code></pre>
 <p>The mean and variance are closer to the mean and variance of the original outcome than when one ignores coefficient uncertainty. This approach will always result in a lower variance than when one considers the uncertainty in regression coefficients. It is much faster and requires zero programming to implement, but I am not comfortable ignoring uncertainty in regression coefficients, making the model seem more adequate than it is.</p>
 <p>Another problem is most packages that utilize <code>lm()</code> and <code>glm()</code> and simulate data from the model would probably not implement their own <code>simulate()</code> function. For example, <code>DHARMa</code>, a great package for simulation-based residual diagnostics, also relies on the <code>simulate()</code> function when evaluating GLMs.</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Gelman, A., &amp; Hill, J. (2007). <em>Data analysis using regression and multilevel/hierarchical models</em>. Cambridge University Press.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Gelman and Hill perform a procedure that is a little more complicated and has its basis in Bayesian inference. It is implemented in the <code>sim()</code> function in the <code>arm</code> package.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </main>
 

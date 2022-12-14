@@ -283,20 +283,20 @@ logLik(pom.ord)
 <div id="acat">
 <p>Adjacent categories parameterization:</p>
 <p>$$\begin{array}{c|ccc} &amp; 1 - 2 &amp; 2 - 3 &amp; 3 - 4\\ \hline 1 &amp; 0 &amp;  &amp;  \\ 2 &amp; 1 &amp; 0 &amp;  \\ 3 &amp;  &amp; 1 &amp; 0 \\ 4 &amp;  &amp;  &amp; 1\end{array}$$</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Agresti, A. (2013). Categorical data analysis. Wiley-Interscience.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Under normal circumstances, we would also need to inform the software that the variances are different for each outcome. However this is the binomial regression, and the variance of the latent variable is fixed at \(\frac{pi^2}{3}\). If this were an attempt at multivariate OLS regression, one would have to model the dispersion separately for each variable. I believe the <code>sformula =</code> argument in the <code>geese()</code> function in <code>geepack</code> should make this possible.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>I use an <code>unstructured</code> working correlation structure because it allows the estimation of the correlation between each pair of outcomes. In the example here, there are five outcomes, so we would estimate 10 \(\big(\frac{5 \times 4}{2}\big)\) correlations. Other alternatives do not permit this: <code>independence</code> places 1 on diagonal, and 0 off diagonal and produces the same parameter estimates as <code>glm()</code>; <code>exchangeable</code> forces all off diagonal elements to be the same (<em>compound symmetry</em> in ANOVA terminology) and would be overly constraining; and <code>ar1</code> uses a specification that is more adequate for time ordered data.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </main>
 

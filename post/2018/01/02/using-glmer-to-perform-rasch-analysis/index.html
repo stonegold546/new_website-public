@@ -35,7 +35,7 @@
 
 <main>
 <p>I&rsquo;ve been interested in the relationship between ordinal regression and item response theory (IRT) for a few months now. There are several helpful papers on the topic, here are some randomly picked ones <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and a book.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> In this post, I focus on Rasch analysis. To do any of these analyses as a regression, your data need to be in long format - single column identifying items (regression predictor), single column with item response categories (regression outcome), and column holding the person ID. Using the right dummy coding of the variables, you can get so-called <em>item difficulties</em> as regression coefficients for the items - more on this later.</p>
-<p>Most recently, I spent some type trying to understand (in English) the different estimation methods. The clearest reading I found is the Software chapter of De Boeck &amp; Wilson&rsquo;s Explanatory item response models, the final chapter.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> I&rsquo;ve learned a few things. The three most common estimation methods are:</p>
+<p>Most recently, I spent some type trying to understand (in English) the different estimation methods. The clearest reading I found is the Software chapter of De Boeck &amp; Wilson&rsquo;s Explanatory item response models, the final chapter.<sup id="fnref1:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> I&rsquo;ve learned a few things. The three most common estimation methods are:</p>
 <ul>
 <li>
 <p>Joint maximum likelihood (JML): To do this, you include both the items and the persons as dummy variables in the model predicting the responses, and apply ordinal logistic regression. You &ldquo;maximize the likelihood&rdquo; of both item and person measures, hence the &ldquo;joint&rdquo; in the joint maximum likelihood. Things can get unwieldy (bonkers) pretty quickly; if you have a thousand persons, you have 999 dummies for persons. And it seems to be the least recommended of the three estimation methods.</p>
@@ -422,35 +422,35 @@ ggplot(test.info.df, aes(x = theta, y = info)) +
 <p><img src="/img/posts/rasch_bin_logistic/sem.png" alt="SEM"></p>
 <p>This is the one I like best, because I feel it is most informative. This plot shows that for a kid with an estimated ability of -3, their ability is estimated with such precision that their actual score could lie between -1.5 and -4.5. In the middle at 0, the actual score could lie between, by my guess, -.8 and .8. I am not so sure this interpretation is correct, but it is appealing :).</p>
 <hr>
-<p>I&rsquo;m not sure what I have achieved here, apart from a lot of ggplot-ing, &hellip; But having worked through this, I feel I can better understand what the model is trying to claim a series of items, and what some of its diagnostics are about. Also, because the model is a regression model, it is set for the addition of additional predictors - but that&rsquo;s no longer a Rasch model. I guess the next step would be to replicate this on real data I am working on. The <code>vcrpart</code> &amp; <code>ordinal</code> packages could work for this, as it performs ordinal multilevel regression. However, ordinal only performs cumulative link logistic regression (Rijmen et al.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> call it the <em>graded response model</em>), while <code>vcrpart</code> performs cumulative link, adjacent categories (<em>partial credit model</em> and <em>rating scale model</em>), and baseline category (<em>nominal response model</em>) ordinal regression models.</p>
-<p>I have left out differential item functioning, but I believe that to be testing the fixed effects of groups in the data, and testing the interaction between test items and groups.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>I&rsquo;m not sure what I have achieved here, apart from a lot of ggplot-ing, &hellip; But having worked through this, I feel I can better understand what the model is trying to claim a series of items, and what some of its diagnostics are about. Also, because the model is a regression model, it is set for the addition of additional predictors - but that&rsquo;s no longer a Rasch model. I guess the next step would be to replicate this on real data I am working on. The <code>vcrpart</code> &amp; <code>ordinal</code> packages could work for this, as it performs ordinal multilevel regression. However, ordinal only performs cumulative link logistic regression (Rijmen et al.<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> call it the <em>graded response model</em>), while <code>vcrpart</code> performs cumulative link, adjacent categories (<em>partial credit model</em> and <em>rating scale model</em>), and baseline category (<em>nominal response model</em>) ordinal regression models.</p>
+<p>I have left out differential item functioning, but I believe that to be testing the fixed effects of groups in the data, and testing the interaction between test items and groups.<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <hr>
 <blockquote>
 <p>P.S.: Rasch analysis is not just math (multilevel logistic regression, conditional logistic regression), it also seems to be a philosophy. So I guess the title here is misleading :). I have not used glmer() to perform Rasch analysis, I just created the outputs that support Rasch analysis.</p>
 </blockquote>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Rijmen, F., Tuerlinckx, F., De Boeck, P., &amp; Kuppens, P. (2003). A nonlinear mixed model framework for item response theory. Psychological Methods, 8(2), 185–205. <a href="https://doi.org/10.1037/1082-989X.8.2.185">https://doi.org/10.1037/1082-989X.8.2.185</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Rijmen, F., Tuerlinckx, F., De Boeck, P., &amp; Kuppens, P. (2003). A nonlinear mixed model framework for item response theory. Psychological Methods, 8(2), 185–205. <a href="https://doi.org/10.1037/1082-989X.8.2.185">https://doi.org/10.1037/1082-989X.8.2.185</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p>De Boeck, P., Bakker, M., Zwitser, R., Nivard, M., Hofman, A., Tuerlinckx, F., &amp; Partchev, I. (2011). The Estimation of Item Response Models with the lmer Function from the lme4 Package in R. Journal Of Statistical Software, 39(12), 1–28. <a href="https://doi.org/10.18637/jss.v039.i12">https://doi.org/10.18637/jss.v039.i12</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p>De Boeck, P., Bakker, M., Zwitser, R., Nivard, M., Hofman, A., Tuerlinckx, F., &amp; Partchev, I. (2011). The Estimation of Item Response Models with the lmer Function from the lme4 Package in R. Journal Of Statistical Software, 39(12), 1–28. <a href="https://doi.org/10.18637/jss.v039.i12">https://doi.org/10.18637/jss.v039.i12</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>Hedeker, D., Mermelstein, R. J., Demirtas, H., &amp; Berbaum, M. L. (2016). A mixed-effects location-scale model for ordinal questionnaire data. Health Services and Outcomes Research Methodology, 16(3), 117–131. <a href="https://doi.org/10.1007/s10742-016-0145-9">https://doi.org/10.1007/s10742-016-0145-9</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>Engec, N. (1998). Logistic regression and item response theory: Estimation item and ability parameters by using logistic regression in IRT. ProQuest Dissertations and Theses. Retrieved from <a href="http://digitalcommons.lsu.edu/gradschool_disstheses/6731">http://digitalcommons.lsu.edu/gradschool_disstheses/6731</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p>Reise, S. P. (2000). Using mutlilevel logistic regression to evaluate person-fit in IRT models. Multivariate Behavioral Research, 35(4), 543–568. <a href="https://doi.org/10.1207/S15327906MBR3504_06">https://doi.org/10.1207/S15327906MBR3504_06</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
-<p>De Boeck, P., &amp; Wilson, M. (2004). Explanatory item response models : a generalized linear and nonlinear approach. (P. De Boeck &amp; M. Wilson, Eds.). New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4757-3990-9">https://doi.org/10.1007/978-1-4757-3990-9</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:6">
+<p>De Boeck, P., &amp; Wilson, M. (2004). Explanatory item response models : a generalized linear and nonlinear approach. (P. De Boeck &amp; M. Wilson, Eds.). New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4757-3990-9">https://doi.org/10.1007/978-1-4757-3990-9</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </main>
 
