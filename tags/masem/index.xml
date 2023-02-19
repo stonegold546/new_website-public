@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/masem/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Meta-analytic Bayesian structural equation modeling</title>
-      <link>https://www.jamesuanhoro.com/post/2022/12/14/meta-analytic-bayesian-structural-equation-modeling/</link>
+      <title>Hierarchical Covariance Estimation Approach to Meta-Analytic Structural Equation Modeling</title>
+      <link>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.jamesuanhoro.com/post/2022/12/14/meta-analytic-bayesian-structural-equation-modeling/</guid>
+      <guid>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</guid>
       <description>Manuscript Summary twitter thread Things I would change Manuscript There is a non-pay-walled version below, but the version of record is available at the Structural Equation Modeling, http://www.tandfonline.com/10.1080/10705511.2022.2142128.
 Here&amp;rsquo;s the PDF and OSF repository with simulation and data analyses code in R.
 Some points about the paper from a Twitter thread I just typed up, and some things I would change at the bottom:
