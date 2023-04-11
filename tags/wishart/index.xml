@@ -26,8 +26,8 @@ The package is hosted on both GitHub and r-universe &amp;ndash; r-universe is re
       <guid>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</guid>
       <description>Manuscript Summary twitter thread Things I would change Manuscript There is a non-pay-walled version below, but the version of record is available at the Structural Equation Modeling, http://www.tandfonline.com/10.1080/10705511.2022.2142128.
 Here&amp;rsquo;s the PDF and OSF repository with simulation and data analyses code in R.
-Some points about the paper from a Twitter thread I just typed up, and some things I would change at the bottom:
-Summary twitter thread The paper does a few things I like.</description>
+Also, some of the methods in this paper are now implemented in the minorbsem R package: website, r-universe.
+Some points about the paper from a Twitter thread I just typed up, and some things I would change at the bottom:</description>
     </item>
     
   </channel>
