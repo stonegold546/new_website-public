@@ -6,7 +6,21 @@
     <description>Recent content in Posts on James Uanhoro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Apr 2023 08:43:23 -0500</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AERA 2023 Presentation: Modeling misspecification as a parameter in Bayesian SEMs</title>
+      <link>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</link>
+      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</guid>
+      <description>Presentation Please find a copy of the AERA 2023 SEM SIG presentation here:
+Manuscript And a version of the manuscript here:
+The Open Science Framework repository for code in the paper is: https://osf.io/29ydb/
+R package The following links all have installation instructions:
+package website: https://jamesuanhoro.github.io/minorbsem/ r-universe: https://jamesuanhoro.r-universe.dev/minorbsem GitHub: https://github.com/jamesuanhoro/minorbsem/ Please reach out to me if you run into any problems during installation, package use.
+Older blog post about the package: The minorbsem package in R</description>
+    </item>
+    
     <item>
       <title>The minorbsem package in R</title>
       <link>https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/</link>
