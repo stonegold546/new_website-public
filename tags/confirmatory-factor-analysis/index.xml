@@ -1,52 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>confirmatory-factor-analysis on James Uanhoro</title>
+    <title>Confirmatory-Factor-Analysis on James Uanhoro</title>
     <link>https://www.jamesuanhoro.com/tags/confirmatory-factor-analysis/</link>
-    <description>Recent content in confirmatory-factor-analysis on James Uanhoro</description>
+    <description>Recent content in Confirmatory-Factor-Analysis on James Uanhoro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/confirmatory-factor-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.jamesuanhoro.com/tags/confirmatory-factor-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>When data are not so informative, it pays to choose the sum score over the factor score</title>
       <link>https://www.jamesuanhoro.com/post/2019/08/02/when-data-are-not-so-informative-it-pays-to-choose-the-sum-score-over-the-factor-score/</link>
       <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2019/08/02/when-data-are-not-so-informative-it-pays-to-choose-the-sum-score-over-the-factor-score/</guid>
-      <description>When I first came across the recent preprint by McNeish and Gordon Wolf on Twitter on how sum scores are factor scores from a heavily constrained model, my first reaction was: don&amp;rsquo;t we all know this already? Sacha Epskamp asked the same question and there&amp;rsquo;s a discussion that follows about how people who study these topics know this, but applied researchers may not.
-I skimmed the paper and the authors show how sum scores are factor scores when all item error variances are the same and all loadings are the same across items.</description>
+      <description>When I first came across the recent preprint by McNeish and Gordon Wolf on Twitter on how sum scores are factor scores from a heavily constrained model, my first reaction was: don&amp;rsquo;t we all know this already? Sacha Epskamp asked the same question and there&amp;rsquo;s a discussion that follows about how people who study these topics know this, but applied researchers may not.&#xA;I skimmed the paper and the authors show how sum scores are factor scores when all item error variances are the same and all loadings are the same across items.</description>
     </item>
-    
     <item>
       <title>Multidimensional CFA with RStan</title>
       <link>https://www.jamesuanhoro.com/post/2018/11/28/multidimensional-cfa-with-rstan/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2018/11/28/multidimensional-cfa-with-rstan/</guid>
-      <description>For starters, here&amp;rsquo;s the Stan code. And here&amp;rsquo;s the R script: Stan code. If you are already familiar with RStan, the basic concepts you need to combine are standard multilevel models with correlated random slopes and heteroskedastic errors.
-I will embed R code into the demonstration. The required packages are lavaan, lme4 and RStan.
-I like to understand most statistical methods as regression models. This way, it&amp;rsquo;s easy to understand the claims underlying a large number of techniques.</description>
+      <description>For starters, here&amp;rsquo;s the Stan code. And here&amp;rsquo;s the R script: Stan code. If you are already familiar with RStan, the basic concepts you need to combine are standard multilevel models with correlated random slopes and heteroskedastic errors.&#xA;I will embed R code into the demonstration. The required packages are lavaan, lme4 and RStan.&#xA;I like to understand most statistical methods as regression models. This way, it&amp;rsquo;s easy to understand the claims underlying a large number of techniques.</description>
     </item>
-    
     <item>
       <title>A Chi-Square test of close fit in covariance-based SEM</title>
       <link>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</link>
       <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</guid>
-      <description>TLDR: If you can assume close fit for the RMSEA, there is no reason why you cannot for a Chi-Square test in SEMs. The method to do this is relatively simple, and may cause SEM practitioners to reconsider the Chi-Square test.
-When assessing the fit of structural equation models, it is common for applied researchers to dismiss the \(\chi^2\) test because it will almost always detect a statistically significant discrepancy between your model and the data, given a large enough sample size.</description>
+      <description>TLDR: If you can assume close fit for the RMSEA, there is no reason why you cannot for a Chi-Square test in SEMs. The method to do this is relatively simple, and may cause SEM practitioners to reconsider the Chi-Square test.&#xA;When assessing the fit of structural equation models, it is common for applied researchers to dismiss the \(\chi^2\) test because it will almost always detect a statistically significant discrepancy between your model and the data, given a large enough sample size.</description>
     </item>
-    
     <item>
       <title>Misspecification and fit indices in covariance-based SEM</title>
       <link>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</link>
       <pubDate>Sat, 28 Oct 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</guid>
-      <description>TLDR: If you have good measurement quality, conventional benchmarks for fit indices may lead to bad decisions. Additionally, global fit indices are not informative for investigating misspecification.
-I am working with one of my professors, Dr. Jessica Logan, on a checklist for the developmental progress of young children. We intend to take this down the IRT route (or ordinal logistic regression), but currently, this is all part of a factor analysis course project.</description>
+      <description>TLDR: If you have good measurement quality, conventional benchmarks for fit indices may lead to bad decisions. Additionally, global fit indices are not informative for investigating misspecification.&#xA;I am working with one of my professors, Dr. Jessica Logan, on a checklist for the developmental progress of young children. We intend to take this down the IRT route (or ordinal logistic regression), but currently, this is all part of a factor analysis course project.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>causality on James Uanhoro</title>
+    <title>Causality on James Uanhoro</title>
     <link>https://www.jamesuanhoro.com/tags/causality/</link>
-    <description>Recent content in causality on James Uanhoro</description>
+    <description>Recent content in Causality on James Uanhoro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/causality/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.jamesuanhoro.com/tags/causality/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On the interpretation of regression coefficients</title>
       <link>https://www.jamesuanhoro.com/post/2017/08/11/on-the-interpretation-of-regression-coefficients/</link>
       <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2017/08/11/on-the-interpretation-of-regression-coefficients/</guid>
-      <description>TLDR: We should interpret regression coefficients for continuous variables as we would descriptive dummy variables, unless we intend to make causal claims.
-I am going to be teaching regression labs in the Fall, and somehow, I stumbled onto Gelman and Hill&amp;rsquo;s Data analysis using regression and multilevel/hierarchical models.1 So I started reading it and it&amp;rsquo;s a good book.
-A useful piece of advice they give is to interpret regression coefficients in a predictive manner (p.</description>
+      <description>TLDR: We should interpret regression coefficients for continuous variables as we would descriptive dummy variables, unless we intend to make causal claims.&#xA;I am going to be teaching regression labs in the Fall, and somehow, I stumbled onto Gelman and Hill&amp;rsquo;s Data analysis using regression and multilevel/hierarchical models.1 So I started reading it and it&amp;rsquo;s a good book.&#xA;A useful piece of advice they give is to interpret regression coefficients in a predictive manner (p.</description>
     </item>
-    
   </channel>
 </rss>

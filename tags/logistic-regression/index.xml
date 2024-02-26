@@ -1,59 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>logistic-regression on James Uanhoro</title>
+    <title>Logistic-Regression on James Uanhoro</title>
     <link>https://www.jamesuanhoro.com/tags/logistic-regression/</link>
-    <description>Recent content in logistic-regression on James Uanhoro</description>
+    <description>Recent content in Logistic-Regression on James Uanhoro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Nov 2019 11:43:14 -0500</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/logistic-regression/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Nov 2019 11:43:14 -0500</lastBuildDate>
+    <atom:link href="https://www.jamesuanhoro.com/tags/logistic-regression/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Problems with using odds ratios as effect sizes in binary logistic regression and alternative approaches</title>
       <link>https://www.jamesuanhoro.com/post/2019/11/25/problems-with-using-odds-ratios-as-effect-sizes-in-binary-logistic-regression-and-alternative-approaches/</link>
       <pubDate>Mon, 25 Nov 2019 11:43:14 -0500</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2019/11/25/problems-with-using-odds-ratios-as-effect-sizes-in-binary-logistic-regression-and-alternative-approaches/</guid>
-      <description>This is my first (first author) journal article. We started writing it in Summer 2018, with first submission by November 2018. So my thinking has changed somewhat since then. There is a non-pay-walled version below, but the version of record is available at the Journal of Experimental Education, http://www.tandfonline.com/10.1080/00220973.2019.1693328. The best part of the review process was communicating with the editor, Professor Brian French - he was very kind.
-Here&amp;rsquo;s the PDF and GitHub repository with simulation and figure reproduction code in R (very little comments).</description>
+      <description>This is my first (first author) journal article. We started writing it in Summer 2018, with first submission by November 2018. So my thinking has changed somewhat since then. There is a non-pay-walled version below, but the version of record is available at the Journal of Experimental Education, http://www.tandfonline.com/10.1080/00220973.2019.1693328. The best part of the review process was communicating with the editor, Professor Brian French - he was very kind.&#xA;Here&amp;rsquo;s the PDF and GitHub repository with simulation and figure reproduction code in R (very little comments).</description>
     </item>
-    
     <item>
       <title>Possibility of heteroskedasticity is a good reason not to dichotomize a continuous variable for use as outcome in logistic regression.</title>
       <link>https://www.jamesuanhoro.com/post/2018/10/20/possibility-of-heteroskedasticity-is-a-good-reason-not-to-dichotomize-a-continuous-variable-for-use-as-outcome-in-logistic-regression./</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2018/10/20/possibility-of-heteroskedasticity-is-a-good-reason-not-to-dichotomize-a-continuous-variable-for-use-as-outcome-in-logistic-regression./</guid>
-      <description>Continuing on whether it&amp;rsquo;s a good idea to dichotomize continuous variables prior to analysis for substantive reasons, I think I settle on the side of bad idea. The major reason is potential heteroskedasticity of the error term in the linear regression model for the original continuous variable.
-This is an interesting issue, but one that I do not want to devote time to write about. So I decided to write a brief methods note.</description>
+      <description>Continuing on whether it&amp;rsquo;s a good idea to dichotomize continuous variables prior to analysis for substantive reasons, I think I settle on the side of bad idea. The major reason is potential heteroskedasticity of the error term in the linear regression model for the original continuous variable.&#xA;This is an interesting issue, but one that I do not want to devote time to write about. So I decided to write a brief methods note.</description>
     </item>
-    
     <item>
       <title>Should you perform logistic regression on a dichotomized continuous variable when you have access to the continuous variable? I&#39;m not sure.</title>
       <link>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</guid>
-      <description>See here for an update, I recommend not dichotomizing, but it pays to read this first.
-A standard situation in education or medicine is we have a continuous measure, but then we have cut-points on those continuous measures that are clinically/practically significant. An example is BMI where I hear 30 matters. You may have an achievement test with 70 as the pass score. When this happens, researchers may sometimes be interested in modeling BMI over 30 or pass/fail as the outcome of interest.</description>
+      <description>See here for an update, I recommend not dichotomizing, but it pays to read this first.&#xA;A standard situation in education or medicine is we have a continuous measure, but then we have cut-points on those continuous measures that are clinically/practically significant. An example is BMI where I hear 30 matters. You may have an achievement test with 70 as the pass score. When this happens, researchers may sometimes be interested in modeling BMI over 30 or pass/fail as the outcome of interest.</description>
     </item>
-    
     <item>
       <title>Using binary regression software to model ordinal data as a multivariate GLM</title>
       <link>https://www.jamesuanhoro.com/post/2018/02/12/using-binary-regression-software-to-model-ordinal-data-as-a-multivariate-glm/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2018/02/12/using-binary-regression-software-to-model-ordinal-data-as-a-multivariate-glm/</guid>
       <description>I have read that the most common model for analyzing ordinal data is the cumulative link logistic model, coupled with the proportional odds assumption. Essentially, you treat the outcome as if it were the categorical manifestation of a continuous latent variable. The predictor variables of this outcome influence it in one way only, so you get a single regression coefficient for each predictor. But the model has several intercepts representing the points at which the variable was cut to create the observed categorical manifestation.</description>
     </item>
-    
     <item>
       <title>Using glmer() to perform Rasch analysis</title>
       <link>https://www.jamesuanhoro.com/post/2018/01/02/using-glmer-to-perform-rasch-analysis/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2018/01/02/using-glmer-to-perform-rasch-analysis/</guid>
       <description>I&amp;rsquo;ve been interested in the relationship between ordinal regression and item response theory (IRT) for a few months now. There are several helpful papers on the topic, here are some randomly picked ones 1 2 3 4 5, and a book.6 In this post, I focus on Rasch analysis. To do any of these analyses as a regression, your data need to be in long format - single column identifying items (regression predictor), single column with item response categories (regression outcome), and column holding the person ID.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,52 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>simulation on James Uanhoro</title>
+    <title>Simulation on James Uanhoro</title>
     <link>https://www.jamesuanhoro.com/tags/simulation/</link>
-    <description>Recent content in simulation on James Uanhoro</description>
+    <description>Recent content in Simulation on James Uanhoro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.jamesuanhoro.com/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Should you perform logistic regression on a dichotomized continuous variable when you have access to the continuous variable? I&#39;m not sure.</title>
       <link>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</guid>
-      <description>See here for an update, I recommend not dichotomizing, but it pays to read this first.
-A standard situation in education or medicine is we have a continuous measure, but then we have cut-points on those continuous measures that are clinically/practically significant. An example is BMI where I hear 30 matters. You may have an achievement test with 70 as the pass score. When this happens, researchers may sometimes be interested in modeling BMI over 30 or pass/fail as the outcome of interest.</description>
+      <description>See here for an update, I recommend not dichotomizing, but it pays to read this first.&#xA;A standard situation in education or medicine is we have a continuous measure, but then we have cut-points on those continuous measures that are clinically/practically significant. An example is BMI where I hear 30 matters. You may have an achievement test with 70 as the pass score. When this happens, researchers may sometimes be interested in modeling BMI over 30 or pass/fail as the outcome of interest.</description>
     </item>
-    
     <item>
       <title>Two group mean and variance comparisons</title>
       <link>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</link>
       <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</guid>
-      <description>Someone asked an interesting question on Cross Validated recently about comparing the means and variances of two groups. They had a substantive interest in exploring variance and mean differences between two groups. They were thinking about Shapiro-Wilk test to test the data for normality, Levene&amp;rsquo;s test or F-test for variance comparisons depending on the results of Shapiro-Wilk, and Mann-Whitney or Welch&amp;rsquo;s test for means comparisons depending on the Shapiro-Wilk.
-I gave a somewhat detailed answer and liked it, so pasting it here verbatim.</description>
+      <description>Someone asked an interesting question on Cross Validated recently about comparing the means and variances of two groups. They had a substantive interest in exploring variance and mean differences between two groups. They were thinking about Shapiro-Wilk test to test the data for normality, Levene&amp;rsquo;s test or F-test for variance comparisons depending on the results of Shapiro-Wilk, and Mann-Whitney or Welch&amp;rsquo;s test for means comparisons depending on the Shapiro-Wilk.&#xA;I gave a somewhat detailed answer and liked it, so pasting it here verbatim.</description>
     </item>
-    
     <item>
       <title>Little&#39;s MCAR test at different sample sizes</title>
       <link>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</guid>
-      <description>TLDR: Little&amp;rsquo;s MCAR test is unable to tell data that are MCAR from data that are MAR in small samples, but maintains the nominal error rate when null is true across a wide range of sample sizes.
-I just found out about the R simglm package and decided to do a small simulation to test Little&amp;rsquo;s MCAR test1 under different sample sizes. I could have investigated heteroskedasticity in linear regression instead, and I probably will in the future.</description>
+      <description>TLDR: Little&amp;rsquo;s MCAR test is unable to tell data that are MCAR from data that are MAR in small samples, but maintains the nominal error rate when null is true across a wide range of sample sizes.&#xA;I just found out about the R simglm package and decided to do a small simulation to test Little&amp;rsquo;s MCAR test1 under different sample sizes. I could have investigated heteroskedasticity in linear regression instead, and I probably will in the future.</description>
     </item>
-    
     <item>
       <title>Theil-Sen regression in R</title>
       <link>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</guid>
-      <description>TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the Theil-Sen estimator.
-A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:
-Plot a line between all the points in your data Calculate the slope for each line The median slope is your regression slope Calculating the slope this way happens to be quite robust.</description>
+      <description>TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the Theil-Sen estimator.&#xA;A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:&#xA;Plot a line between all the points in your data Calculate the slope for each line The median slope is your regression slope Calculating the slope this way happens to be quite robust.</description>
     </item>
-    
   </channel>
 </rss>

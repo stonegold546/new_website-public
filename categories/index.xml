@@ -6,33 +6,28 @@
     <description>Recent content in Categories on James Uanhoro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.jamesuanhoro.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>stats</title>
+      <title>Stats</title>
       <link>https://www.jamesuanhoro.com/categories/stats/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/categories/stats/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rstan</title>
+      <title>Rstan</title>
       <link>https://www.jamesuanhoro.com/categories/rstan/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/categories/rstan/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rstats</title>
+      <title>Rstats</title>
       <link>https://www.jamesuanhoro.com/categories/rstats/</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://www.jamesuanhoro.com/categories/rstats/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
