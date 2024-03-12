@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jobs on James Uanhoro</title>
+    <link>http://localhost:1313/categories/jobs/</link>
+    <description>Recent content in Jobs on James Uanhoro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/jobs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My job market experience</title>
+      <link>http://localhost:1313/post/2021/06/27/my-job-market-experience/</link>
+      <pubDate>Sun, 27 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2021/06/27/my-job-market-experience/</guid>
+      <description>I was on the job market this last year and ended up with a faculty job. I think it&amp;rsquo;s worth sharing aspects of my process, so maybe someone learns something from it.&#xA;Prior to entering the job market, I decided two things.&#xA;I would not be a postdoc unless it was a postdoc to faculty position: I have moved around for school since age 10 when I went to boarding school.</description>
+    </item>
+  </channel>
+</rss>
