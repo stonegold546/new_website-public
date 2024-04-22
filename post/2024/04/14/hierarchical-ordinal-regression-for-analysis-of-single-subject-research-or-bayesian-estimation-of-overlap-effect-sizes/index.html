@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hierarchical ordinal regression for analysis of single subject research OR Bayesian estimation of overlap effect sizes | James Uanhoro</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/papers/">First-author papers</a></li>
+      
+      <li><a href="/post/">Blog posts</a></li>
+      
+      <li><a href="/projects/">Programming projects</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Hierarchical ordinal regression for analysis of single subject research OR Bayesian estimation of overlap effect sizes</span></h1>
+
+<h2 class="date">2024/04/14</h2>
+</div>
+
+<main>
+<h2 id="background">Background</h2>
+<p>For some time, I&rsquo;ve been interested in analysis of single case designs (SCD) using hierarchical models: each case is unique but we can improve estimation for each case by sharing data across cases. I also like Bayesian modeling. With Bayesian models, we try to encode as much of our knowledge of the data and parameters using likelihood and prior functions. Given that data from SCD are often limited and atypical, I&rsquo;ve thought such data are a perfect candidate for ordinal regression.</p>
+<p>Basically, we model the seemingly continuous data as ordinal, this always adequately describes the information in the data since univariate continuous data of any unknown distribution are also ordinal. Frank Harrell has pushed this type of model with lots of resources <a href="https://www.fharrell.com/post/rpo/">here</a>. There are also useful papers: <a href="https://www.degruyter.com/document/doi/10.1016/j.sjpain.2016.06.012/html">here</a>, <a href="http://www.ncbi.nlm.nih.gov/pubmed/28872693">here</a> and <a href="https://www.degruyter.com/document/doi/10.2202/1557-4679.1230/html">here</a>, and I&rsquo;ve applied to same idea to analysis of sum scores of Likert-response scales <a href="https://doi.org/10.1525/collabra.57610">here</a>.</p>
+<p>So I did some work on ordinal hierarchical models for analysis of SCD some time back &ndash; time stamp on my laptop says January 2022!! This work never left my laptop, and I mentioned it in passing to maybe two people. I thought of reaching out to <a href="https://www.jepusto.com/">James Pustejovsky</a> to get his thoughts, but thought: why? Enter AERA 2024, I somehow found myself at a structured poster session for analysis of SCD. Very interesting work all around. Made me want to share this again, and James P. encouraged me to send it his way. So here goes.</p>
+<h2 id="description-of-hierarchical-ordinal-model">Description of hierarchical ordinal model</h2>
+<p>At the moment, the idea is for analysis of simple designs: AB, ABAB, &hellip; First step is to transform the data to ranks.</p>
+<h3 id="threshold-estimation">Threshold estimation</h3>
+<p>The data are modeled as ordinal (specifically cumulative logit with proportional odds assumed) with thresholds estimated using I-splines (monotonic splines). We model the thresholds with splines because splines can approximate the thresholds while estimating a fewer number of parameters. For example, if we have 85 unique outcome values, we can approximate the 84 thresholds using an 18-basis spline &ndash; great reduction in number of parameters. Also, I-splines are monotonic which necessary for the ordinality constraint.</p>
+<h3 id="other-model-features">Other model features</h3>
+<ol>
+<li>Case trajectories: I assume each case has a separate trajectory. These trajectories are hierarchically modeled using B-splines (generic choice).</li>
+<li>Treatment effects: The effect of the treatment is also hierarchically estimated as different for each case.</li>
+</ol>
+<h3 id="model">Model</h3>
+<p>The model for the ranked data \(z_{tc}\) at each time point \(t\) for each case \(c\) assuming \(J\) unique data points is:</p>
+<p>$$
+\begin{split}
+\text{Pr}(z_{tc} \le j) &amp;= \text{inv-logit}\Big(\mathbf s_j^\prime \boldsymbol\lambda  - \big(\alpha + \beta_c\times treat_{tc} + \mathbf g_t^\prime\boldsymbol(\boldsymbol\gamma+\boldsymbol\delta_c)\big)\Big)\ \text{for } (j = 1, \dots, J-1),\newline
+\boldsymbol\lambda \sim \mathcal{N}^+&amp;(0, \sigma_0),\ \ln(\boldsymbol\phi_c) \sim \mathcal{N}(0, \sigma_1),\ \alpha,\ \beta_0 \sim \mathcal{N}(0, 5),\ [\sigma_0, \sigma_1] \sim \mathcal{N}^+(0, 2.5)
+\end{split}
+$$</p>
+
+</main>
+
+<script>talkyardServerUrl='https:\/\/comments-for-www-jamesuanhoro-com.talkyard.net';</script>
+<script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
+
+<div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+<noscript>Please enable Javascript to view comments.</noscript>
+<p style="margin-top: 25px; opacity: 0.9">Comments powered by
+<a href="https://www.talkyard.io">Talkyard</a>.</p>
+</div>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  James Uanhoro | Powered by: <a href="https://www.netlify.com/">Netlify</a>, <a href="https://gohugo.io/">Hugo</a>, <a href="https://themes.gohugo.io/hugo-xmin/">Hugo XMin</a>
+  
+  </footer>
+  </body>
+</html>
+

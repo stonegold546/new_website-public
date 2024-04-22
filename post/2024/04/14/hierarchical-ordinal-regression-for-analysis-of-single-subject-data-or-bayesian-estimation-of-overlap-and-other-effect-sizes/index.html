@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hierarchical ordinal regression for analysis of single subject data OR Bayesian estimation of overlap and other effect sizes | James Uanhoro</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/papers/">First-author papers</a></li>
+      
+      <li><a href="/post/">Blog posts</a></li>
+      
+      <li><a href="/projects/">Programming projects</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Hierarchical ordinal regression for analysis of single subject data OR Bayesian estimation of overlap and other effect sizes</span></h1>
+
+<h2 class="date">2024/04/14</h2>
+</div>
+
+<main>
+<h2 id="background">Background</h2>
+<p>I&rsquo;ve been interested in analysis of single case designs (SCD) using hierarchical models: each case is unique but we can improve estimation for each case by sharing data across cases.
+Given that data from SCD are often atypical, I&rsquo;ve thought such data are a good candidate for ordinal regression.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<!-- I also like Bayesian modeling. With Bayesian models, we try to encode as much of our knowledge of the data and parameters using likelihood and prior functions. -->
+<p>Broadly, we can model unidimensional<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> continuous, count, ordinal data as ordinal, since these data are also ordinal. If we knew the exact distribution for the data, we could perform more efficient analyses, but we often don&rsquo;t. Frank Harrell often recommends this kind of ordinal approach and provides several resources <a href="https://www.fharrell.com/post/rpo/">here</a>. There are also useful papers: here<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, here<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, and here<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and I&rsquo;ve applied to same idea to analysis of sum scores of Likert-response scales.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p>Given this interest, I did some work on ordinal hierarchical models for analysis of SCD some time back &ndash; time stamp on my laptop says January 2022!! This work never left my laptop, and I mentioned it in passing to maybe two people. I thought of reaching out to <a href="https://www.jepusto.com/">James Pustejovsky</a> to get his thoughts, but for some reason, I didn&rsquo;t follow through.</p>
+<p>Enter AERA 2024, I somehow found myself at a structured poster session for analysis of SCD. Very interesting work all around; count mixed models, model-based effect size estimation and benchmarks, single case mediation, &hellip; Made me want to share this again, and James P. encouraged me to send it his way. So here goes.</p>
+<h2 id="description-of-hierarchical-ordinal-model">Description of hierarchical ordinal model</h2>
+<p>I focus on simple designs: AB, ABAB, &hellip;</p>
+<p>I originally did this work with splines for approximating ordinal thresholds e.g.<sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and splines for modeling case-specific trajectories. But I settled for something more conventional in the SCD literature.</p>
+<p>The model assumes case-specific intercepts and treatment effects, and I use hierarchical modeling to estimate both.
+Additionally, the data within each case are autocorrelated.</p>
+<p>First step is to transform the data to (dense) ranks.</p>
+<h3 id="multivariate-normal-model-for-unobserved-continuous-data-given-observed-ordinal-data">Multivariate normal model for unobserved continuous data given observed ordinal data</h3>
+<!-- The most difficult part (implementation-wise) was finding a way to incorporate autocorrelation into an ordinal data model. -->
+<p>If we assume ordinal data were originally normal data that have been discretized and we attempt to build a regression for the original normal data, we arrive at probit regression. Following Albert &amp; Chib (1993)<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>, we can use this relation to model multivariate ordinal data with multivariate probit regression. This allows us set a correlation structure on the ordinal data at the latent level.</p>
+<h3 id="model">Model</h3>
+<p>Assume the latent data for case \(c \in \{1, \dots, C\}\) is a \(T\)-dimensional vector, \(\mathbf z_c\). \(\mathbf z_c\) are sampled as truncated variables given the constraints imposed by the ordered threshold-vector, \(\boldsymbol\kappa\).
+I represent the treatment indicator variable for case \(c\) as \(\mathbf x_c\), then the hierarchical ordinal model is:</p>
+<p>$$
+\begin{split}
+&amp;\mathbf z_c \sim \mathcal{N}_T\left(\gamma_c + \beta_c \times \mathbf x_c, \boldsymbol\Sigma\right), \newline
+&amp; \gamma_c \sim \mathcal{N}(0, \tau_0),\ \beta_c \sim \mathcal{N}(b_0, \tau_1), \newline
+&amp; b_0 \sim \mathcal{N}(0, \tau_b),\ [\tau_0, \tau_1, \tau_b] \sim t^+(3),\ \boldsymbol\kappa \sim t(3)
+\end{split}
+$$</p>
+<!-- \begin{split}
+ \text{Pr}&(z_{tc} \le j) = \text{inv-logit}\Big(\alpha + \mathbf s_j^\prime \boldsymbol\lambda - \big(\beta_c\times treat_{tc} + \mathbf f_t^\prime\boldsymbol(\boldsymbol\gamma+\boldsymbol\delta_c)\big)\Big)\ \text{for } (j = 1, \dots, J-1),\newline
+&\alpha \sim \mathcal{N}(0, 2.5),\ \boldsymbol\lambda \sim \mathcal{N}^+(0, \tau_\lambda),\ \beta_c \sim \mathcal{N}(b_0, \tau_\beta),\ \boldsymbol\gamma \sim \mathcal{N}(0, \tau_\gamma),\ \boldsymbol\delta_c \sim \mathcal{N}(0, \tau_\delta)\newline
+&b_0 \sim \mathcal{N}(0, \tau_b),\ [\tau_\lambda, \tau_\beta, \tau_\gamma, \tau_\delta,\tau_b] \sim t^+(3)
+\end{split} -->
+<p>where \(\gamma_c\) is intercept for case \(c\) shrunken towards 0. Since we will estimate all ordinal thresholds, the <em>grand-mean</em> is 0. The case-specific treatment effect, \(\beta_c\), is shrunken towards \(b_0\), and \(b_0\) is itself shrunken towards 0 (akin to a ridge regression penalty).</p>
+<p>I set up the elements of the covariance matrix, \(\sigma_{i,j}\), as:</p>
+<p>$$
+\sigma_{i,j} = \phi^{\vert i - j\vert},\ \frac{\phi+1}{2} \sim \text{beta}(5,5)
+$$</p>
+<p>such that \(\phi\) is the autocorrelation coefficient. The prior on \(\phi\) assumes a 95% chance \(\phi\) falls in the \((-.6, .6)\) interval &ndash; this sounds like a good choice.<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> The diagonal elements of the matrix are fixed to 1 for the purpose of identifying the probit model.</p>
+<h3 id="effect-sizes">Effect sizes</h3>
+<p>The ordinal probit model above is one for the cumulative distribution function (CDF) of the ranks. From there, we compute the probability mass function (PMF). Given the PMF, one can then apply several of the equations listed in the <a href="https://jepusto.github.io/SingleCaseES/articles/Effect-size-definitions.html">documentation of the SingleCaseES package</a> to obtain effect sizes. I focus on the NAP, PEM and TAU (since it&rsquo;s just \(2\times\) NAP - 1). For effects defined on the original data scale like differences in means or medians, we can simply replace ranks with the original data to obtain results on the original data scale. We can obtain uncertainty intervals for all effects since we compute each effect size within each posterior iteration.</p>
+<h3 id="r-code">R code</h3>
+<p>I implemented the model above with Stan. The code is available as a gist file and contains two demonstrations. I review the demonstrations below.</p>
+<style type="text/css">
+  .gist-data {max-height: 200px;}
+</style>
+<script src="https://gist.github.com/jamesuanhoro/87d532585f3dd92f1207317311ca1313.js"></script>
+<h2 id="demonstrations">Demonstrations</h2>
+<h3 id="tasky-2008task">Tasky (2008)<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup></h3>
+<p>I visualize the data below:</p>
+<p><img src="/img/posts/scd/joined_tasky_01_raw.png" alt="Raw trajectories"></p>
+<p>There are three cases. The outcome is a count variable with 7 unique values &ndash; easy to assume an ordinal model. Higher values are desirable.</p>
+<p>I fit the model, parameters appeared to converge without significant problems. For posterior predictive checking, I assessed the proportion for each count (95% intervals):</p>
+<p><img src="/img/posts/scd/joined_tasky_02_ppc.png" alt="posterior predictive check"></p>
+<p>Results look acceptable. I also plotted the posterior predictive distribution against the individual trajectories on the ordinal scale (90% intervals):</p>
+<p><img src="/img/posts/scd/joined_tasky_03_ppd_90.png" alt="posterior predictive distribution"></p>
+<p>Also looks reasonable. Now for effects (intervals are 80% and 95%):</p>
+<p><img src="/img/posts/scd/joined_tasky_04_ord_es_80_95.png" alt="Effects plot"></p>
+<p>Regardless of the effect size, there is improvement for Amber and Rebeccah but the evidence is not as conclusive for Cara. Only the PEM provides clear evidence of improvement for Cara, but the uncertainty about the 81% estimate is still large.</p>
+<p>Then I compare the ordinal model effects to simple case-wise computations obtained from the SingleCaseES package (95% intervals):</p>
+<p><img src="/img/posts/scd/joined_tasky_05_ord_es_comp_95.png" alt="Compare approaches"></p>
+<p>The ordinal model-based effects often have less uncertainty and are often shrunken &ndash; effects of pooling and regularization. This makes the most difference for the log-ratio of medians estimates (LRM) where the improved conclusions for Amber and Rebeccah are more certain in the ordinal analysis. Note that LRRi is the log-ratio of means. Also, the sampling distribution of the PEM is not yet known, the ordinal model helps with that.</p>
+<h3 id="schmidt-2012-from-singlecasees-package">Schmidt (2012) from SingleCaseES package</h3>
+<p>I visualize the data below:</p>
+<p><img src="/img/posts/scd/joined_schmidt_01_raw.png" alt="Raw trajectories"></p>
+<p>There are three cases. The outcome is seemingly continuous and has 48 unique values. Again, higher values are desirable.</p>
+<p>I fit the model, parameters appeared to converge without significant problems. For posterior predictive checking, I compared the density of the observed data to the density of draws from the posterior predictive distribution:</p>
+<p><img src="/img/posts/scd/joined_schmidt_02_ppc.png" alt="posterior predictive check"></p>
+<p>These results are on the original data scale, though they could be examined on the ordinal scale. For the original data scale, I replace the ranks in the posterior predictive distribution with the original values that were rank transformed. Results look acceptable &ndash; an advantage of the ordinal approach is that pretty much any distributional shape is realizable.</p>
+<p>I also plotted the posterior predictive distribution against the individual trajectories on the ordinal scale (90% intervals):</p>
+<p><img src="/img/posts/scd/joined_schmidt_03_ppd_90.png" alt="posterior predictive distribution"></p>
+<p>We see a fairly flat pattern. This suggests the treatment hardly made a difference.</p>
+<p>Now for effects (intervals are 80% and 95%). I exclude mean and median ratios &ndash; I think these are usually count related metrics:</p>
+<p><img src="/img/posts/scd/joined_schmidt_04_ord_es_80_95.png" alt="Effects plot"></p>
+<p>None of the effects provide strong evidence for improvement.</p>
+<p>Then I compare the ordinal model effects to the standard approach (95% intervals):</p>
+<p><img src="/img/posts/scd/joined_schmidt_05_ord_es_comp_95.png" alt="Compare approaches"></p>
+<p>We again see more stable coefficients for the ordinal approach. The most notable difference between approaches is Jason&rsquo;s PEM. The standard approach returns 17% while the ordinal approach returns 50%. If you check the raw data, we can see that most of Jason&rsquo;s intervention points are lower than the median of the control values. However, we would also be unlikely to conclude the intervention made things worse for Jason &ndash; the pattern looks like much fluctuation, no meaningful change. And the 17% PEM seems misleading about the overall patterns in the data.</p>
+<h2 id="in-closing">In closing</h2>
+<p>I think ordinal regression can be pretty useful for analyzing SCD data. It&rsquo;s no coincidence that several of the effect sizes used to support visual analysis of trajectories are ordinal effect sizes. The gist above contains the code to create all these plots and other plots I did not mention here. I tried to comment the scripts well enough, so I hope the gist is helpful.</p>
+<h3 id="some-notes-about-the-model">Some notes about the model</h3>
+<ul>
+<li>I assumed no correlation between the random intercept and random treatment effect &ndash; no strong thoughts about this but I noticed with some examples that the posterior for this parameter often just matched the prior and I didn&rsquo;t want to think about it much.</li>
+<li>The priors are stand-in defaults, they require more thought than I&rsquo;ve put into them at this stage.</li>
+<li>In limited trials, model runtime depends on the number of thresholds (in addition to the amount of data which is not usually much for SCD). But when using a spline to approximate the thresholds, the number of parameters can be held constant. See <a href="https://gist.github.com/jamesuanhoro/a304312d11cdea5815d34595eef20686">this gist</a> for some examples of using splines to approximate the thresholds, though I do not account for autocorrelation in these models. Instead, I have case-specific trajectories.</li>
+<li>Trying to capture autocorrelation on the latent scale is the reason for the multivariate normal approach. One could instead predict the current ordinal level using the previous ordinal level, see <a href="https://hbiostat.org/proj/covid19/ordmarkov.html">here for examples by Frank Harrell</a>.</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Ordinal logistic regression for the two sample test is practically identical to the Mann-Whitney test, see: &lsquo;&lsquo;Whitehead, J. (1993). Sample size calculations for ordered categorical data. <em>Statistics in Medicine, 12</em>, 2257–2271&rsquo;&rsquo;. You can then think of ordinal regression as a way to extend non-parametric methods to more complex scenarios than simple unadjusted comparisons.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>By unidimensional, I mean univariate data that reflects a single dimension. A counter example would be zero-inflated count data. Although seemingly univariate, such data reflect at least two dimensions.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Heller, G. Z., Manuguerra, M., &amp; Chow, R. (2016). How to analyze the Visual Analogue Scale: Myths, truths and clinical relevance. <em>Scandinavian Journal of Pain, 13</em>(1), 67–75. <a href="https://doi.org/10.1016/J.SJPAIN.2016.06.012">https://doi.org/10.1016/J.SJPAIN.2016.06.012</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Liu, Q., Shepherd, B. E., Li, C., &amp; Harrell, F. E. (2017). Modeling continuous response variables using ordinal regression. <em>Statistics in Medicine, 36</em>(27), 4316–4335. <a href="https://doi.org/10.1002/sim.7433">https://doi.org/10.1002/sim.7433</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Manuguerra, M., &amp; Heller, G. Z. (2010). Ordinal regression models for continuous scales. <em>The International Journal of Biostatistics, 6</em>(1). <a href="https://doi.org/10.2202/1557-4679.1230">https://doi.org/10.2202/1557-4679.1230</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Uanhoro, J. O., &amp; Stone-Sabali, S. (2023). Beyond Group Mean Differences: A Demonstration With Scale Scores in Psychology. <em>Collabra: Psychology, 9</em>(1), 57610. <a href="https://doi.org/10.1525/collabra.57610">https://doi.org/10.1525/collabra.57610</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>Albert, J., &amp; Chib, S. (1995). Bayesian residual analysis for binary response regression models. <em>Biometrika, 82</em>(4), 747–759.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>One I cannot justify :).&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>Tasky, K. K., Rudrud, E. H., Schulze, K. A., &amp; Rapp, J. T. (2008). Using Choice to Increase On-Task Behavior in Individuals with Traumatic Brain Injury. <em>Journal of Applied Behavior Analysis, 41</em>(2), 261–265. <a href="https://doi.org/10.1901/jaba.2008.41-261">https://doi.org/10.1901/jaba.2008.41-261</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</main>
+
+<script>talkyardServerUrl='https:\/\/comments-for-www-jamesuanhoro-com.talkyard.net';</script>
+<script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
+
+<div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+<noscript>Please enable Javascript to view comments.</noscript>
+<p style="margin-top: 25px; opacity: 0.9">Comments powered by
+<a href="https://www.talkyard.io">Talkyard</a>.</p>
+</div>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  James Uanhoro | Powered by: <a href="https://www.netlify.com/">Netlify</a>, <a href="https://gohugo.io/">Hugo</a>, <a href="https://themes.gohugo.io/hugo-xmin/">Hugo XMin</a>
+  
+  </footer>
+  </body>
+</html>
+
