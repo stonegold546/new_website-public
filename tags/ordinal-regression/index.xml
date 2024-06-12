@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ordinal-Regression on James Uanhoro</title>
+    <title>ordinal-regression on James Uanhoro</title>
     <link>https://www.jamesuanhoro.com/tags/ordinal-regression/</link>
-    <description>Recent content in Ordinal-Regression on James Uanhoro</description>
-    <generator>Hugo 0.125.2</generator>
+    <description>Recent content in ordinal-regression on James Uanhoro</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.jamesuanhoro.com/tags/ordinal-regression/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/ordinal-regression/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hierarchical ordinal regression for analysis of single subject data OR Bayesian estimation of overlap and other effect sizes</title>
       <link>https://www.jamesuanhoro.com/post/2024/04/14/hierarchical-ordinal-regression-for-analysis-of-single-subject-data-or-bayesian-estimation-of-overlap-and-other-effect-sizes/</link>
       <pubDate>Sun, 14 Apr 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2024/04/14/hierarchical-ordinal-regression-for-analysis-of-single-subject-data-or-bayesian-estimation-of-overlap-and-other-effect-sizes/</guid>
-      <description>Background I&amp;rsquo;ve been interested in analysis of single case designs (SCD) using hierarchical models: each case is unique but we can improve estimation for each case by sharing data across cases. Given that data from SCD are often atypical, I&amp;rsquo;ve thought such data are a good candidate for ordinal regression.1&#xA;Broadly, we can model unidimensional2 continuous, count, ordinal data as ordinal, since these data are also ordinal. If we knew the exact distribution for the data, we could perform more efficient analyses, but we often don&amp;rsquo;t.</description>
+      <description>Background I&amp;rsquo;ve been interested in analysis of single case designs (SCD) using hierarchical models: each case is unique but we can improve estimation for each case by sharing data across cases. Given that data from SCD are often atypical, I&amp;rsquo;ve thought such data are a good candidate for ordinal regression.1
+Broadly, we can model unidimensional2 continuous, count, ordinal data as ordinal, since these data are also ordinal. If we knew the exact distribution for the data, we could perform more efficient analyses, but we often don&amp;rsquo;t.</description>
     </item>
+    
     <item>
       <title>Using binary regression software to model ordinal data as a multivariate GLM</title>
       <link>https://www.jamesuanhoro.com/post/2018/02/12/using-binary-regression-software-to-model-ordinal-data-as-a-multivariate-glm/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2018/02/12/using-binary-regression-software-to-model-ordinal-data-as-a-multivariate-glm/</guid>
       <description>I have read that the most common model for analyzing ordinal data is the cumulative link logistic model, coupled with the proportional odds assumption. Essentially, you treat the outcome as if it were the categorical manifestation of a continuous latent variable. The predictor variables of this outcome influence it in one way only, so you get a single regression coefficient for each predictor. But the model has several intercepts representing the points at which the variable was cut to create the observed categorical manifestation.</description>
     </item>
+    
   </channel>
 </rss>

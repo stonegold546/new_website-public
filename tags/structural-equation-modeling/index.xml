@@ -1,54 +1,78 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Structural-Equation-Modeling on James Uanhoro</title>
+    <title>structural-equation-modeling on James Uanhoro</title>
     <link>https://www.jamesuanhoro.com/tags/structural-equation-modeling/</link>
-    <description>Recent content in Structural-Equation-Modeling on James Uanhoro</description>
-    <generator>Hugo 0.125.2</generator>
+    <description>Recent content in structural-equation-modeling on James Uanhoro</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.jamesuanhoro.com/tags/structural-equation-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/structural-equation-modeling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AERA 2023 Presentation: Modeling misspecification as a parameter in Bayesian SEMs</title>
       <link>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</link>
       <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</guid>
-      <description>Presentation Please find a copy of the AERA 2023 SEM SIG presentation here:&#xA;Manuscript And a version of the manuscript here:&#xA;The Open Science Framework repository for code in the paper is: https://osf.io/29ydb/&#xA;R package The following links all have installation instructions:&#xA;package website: https://jamesuanhoro.github.io/minorbsem/ r-universe: https://jamesuanhoro.r-universe.dev/minorbsem GitHub: https://github.com/jamesuanhoro/minorbsem/ Please reach out to me if you run into any problems during installation, package use.&#xA;Older blog post about the package: The minorbsem package in R</description>
+      <description>Presentation Please find a copy of the AERA 2023 SEM SIG presentation here:
+Manuscript And a version of the manuscript here:
+The Open Science Framework repository for code in the paper is: https://osf.io/29ydb/
+R package The following links all have installation instructions:
+ package website: https://jamesuanhoro.github.io/minorbsem/ r-universe: https://jamesuanhoro.r-universe.dev/minorbsem GitHub: https://github.com/jamesuanhoro/minorbsem/  Please reach out to me if you run into any problems during installation, package use.
+Older blog post about the package: The minorbsem package in R</description>
     </item>
+    
     <item>
       <title>The minorbsem package in R</title>
       <link>https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/</link>
       <pubDate>Sun, 02 Apr 2023 08:43:23 -0500</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/</guid>
-      <description>I&amp;rsquo;ve been working on the minorbsem package in R since the start of February. It&amp;rsquo;s my first proper attempt at an R package. The package allows you fit Bayesian SEMs while accounting for:&#xA;the possibility that minor factors influence the correlation between items (Uanhoro, 2023), or adventitious error (Wu &amp;amp; Browne, 2015). One can also fit meta-analytic SEMs under similar assumptions (Uanhoro, 2022).&#xA;The package is hosted on both GitHub and r-universe &amp;ndash; r-universe is really great.</description>
+      <description>I&amp;rsquo;ve been working on the minorbsem package in R since the start of February. It&amp;rsquo;s my first proper attempt at an R package. The package allows you fit Bayesian SEMs while accounting for:
+ the possibility that minor factors influence the correlation between items (Uanhoro, 2023), or adventitious error (Wu &amp;amp; Browne, 2015).  One can also fit meta-analytic SEMs under similar assumptions (Uanhoro, 2022).
+The package is hosted on both GitHub and r-universe &amp;ndash; r-universe is really great.</description>
     </item>
+    
     <item>
       <title>Hierarchical Covariance Estimation Approach to Meta-Analytic Structural Equation Modeling</title>
       <link>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</guid>
-      <description>Manuscript Summary twitter thread Things I would change Manuscript There is a non-pay-walled version below, but the version of record is available at the Structural Equation Modeling, http://www.tandfonline.com/10.1080/10705511.2022.2142128.&#xA;Here&amp;rsquo;s the PDF and OSF repository with simulation and data analyses code in R.&#xA;Also, some of the methods in this paper are now implemented in the minorbsem R package: website, r-universe.&#xA;Some points about the paper from a Twitter thread I just typed up, and some things I would change at the bottom:</description>
+      <description>Manuscript Summary twitter thread Things I would change    Manuscript There is a non-pay-walled version below, but the version of record is available at the Structural Equation Modeling, http://www.tandfonline.com/10.1080/10705511.2022.2142128.
+Here&amp;rsquo;s the PDF and OSF repository with simulation and data analyses code in R.
+Also, some of the methods in this paper are now implemented in the minorbsem R package: website, r-universe.
+Some points about the paper from a Twitter thread I just typed up, and some things I would change at the bottom:</description>
     </item>
+    
     <item>
       <title>Traditional SEM overly focuses on LISREL equations to the detriment of dealing with measurement error</title>
       <link>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</link>
       <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</guid>
-      <description>So I don&amp;rsquo;t listen to the Quantitude podcast. It&amp;rsquo;s really difficult for me to get into it when my playlist includes podcasts with episodes titles like: Interstellar Jihad. However, I saw several tweets inspired by the SEM vs. regression episode. And I have too many thoughts, opinions, feelings to stay quiet. I lay them out here.&#xA;SEM is regression A case of cultural differences The actual difference is LISREL But too much LISREL, not enough measurement error LISREL works well for normal-data normal-model no manifest covariates models Covariance matrix \(\to\) LISREL likely fails with discrete indicators LISREL likely fails for SEMs with observed covariates (e.</description>
+      <description>So I don&amp;rsquo;t listen to the Quantitude podcast. It&amp;rsquo;s really difficult for me to get into it when my playlist includes podcasts with episodes titles like: Interstellar Jihad. However, I saw several tweets inspired by the SEM vs. regression episode. And I have too many thoughts, opinions, feelings to stay quiet. I lay them out here.
+   SEM is regression A case of cultural differences The actual difference is LISREL But too much LISREL, not enough measurement error LISREL works well for normal-data normal-model no manifest covariates models Covariance matrix \(\to\) LISREL likely fails with discrete indicators LISREL likely fails for SEMs with observed covariates (e.</description>
     </item>
+    
     <item>
       <title>A Chi-Square test of close fit in covariance-based SEM</title>
       <link>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</link>
       <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</guid>
-      <description>TLDR: If you can assume close fit for the RMSEA, there is no reason why you cannot for a Chi-Square test in SEMs. The method to do this is relatively simple, and may cause SEM practitioners to reconsider the Chi-Square test.&#xA;When assessing the fit of structural equation models, it is common for applied researchers to dismiss the \(\chi^2\) test because it will almost always detect a statistically significant discrepancy between your model and the data, given a large enough sample size.</description>
+      <description>TLDR: If you can assume close fit for the RMSEA, there is no reason why you cannot for a Chi-Square test in SEMs. The method to do this is relatively simple, and may cause SEM practitioners to reconsider the Chi-Square test.
+ When assessing the fit of structural equation models, it is common for applied researchers to dismiss the \(\chi^2\) test because it will almost always detect a statistically significant discrepancy between your model and the data, given a large enough sample size.</description>
     </item>
+    
     <item>
       <title>Misspecification and fit indices in covariance-based SEM</title>
       <link>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</link>
       <pubDate>Sat, 28 Oct 2017 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</guid>
-      <description>TLDR: If you have good measurement quality, conventional benchmarks for fit indices may lead to bad decisions. Additionally, global fit indices are not informative for investigating misspecification.&#xA;I am working with one of my professors, Dr. Jessica Logan, on a checklist for the developmental progress of young children. We intend to take this down the IRT route (or ordinal logistic regression), but currently, this is all part of a factor analysis course project.</description>
+      <description>TLDR: If you have good measurement quality, conventional benchmarks for fit indices may lead to bad decisions. Additionally, global fit indices are not informative for investigating misspecification.
+ I am working with one of my professors, Dr. Jessica Logan, on a checklist for the developmental progress of young children. We intend to take this down the IRT route (or ordinal logistic regression), but currently, this is all part of a factor analysis course project.</description>
     </item>
+    
   </channel>
 </rss>

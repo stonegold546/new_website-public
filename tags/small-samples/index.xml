@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Small-Samples on James Uanhoro</title>
+    <title>small-samples on James Uanhoro</title>
     <link>https://www.jamesuanhoro.com/tags/small-samples/</link>
-    <description>Recent content in Small-Samples on James Uanhoro</description>
-    <generator>Hugo 0.125.2</generator>
+    <description>Recent content in small-samples on James Uanhoro</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.jamesuanhoro.com/tags/small-samples/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/small-samples/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>When data are not so informative, it pays to choose the sum score over the factor score</title>
       <link>https://www.jamesuanhoro.com/post/2019/08/02/when-data-are-not-so-informative-it-pays-to-choose-the-sum-score-over-the-factor-score/</link>
       <pubDate>Fri, 02 Aug 2019 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2019/08/02/when-data-are-not-so-informative-it-pays-to-choose-the-sum-score-over-the-factor-score/</guid>
-      <description>When I first came across the recent preprint by McNeish and Gordon Wolf on Twitter on how sum scores are factor scores from a heavily constrained model, my first reaction was: don&amp;rsquo;t we all know this already? Sacha Epskamp asked the same question and there&amp;rsquo;s a discussion that follows about how people who study these topics know this, but applied researchers may not.&#xA;I skimmed the paper and the authors show how sum scores are factor scores when all item error variances are the same and all loadings are the same across items.</description>
+      <description>When I first came across the recent preprint by McNeish and Gordon Wolf on Twitter on how sum scores are factor scores from a heavily constrained model, my first reaction was: don&amp;rsquo;t we all know this already? Sacha Epskamp asked the same question and there&amp;rsquo;s a discussion that follows about how people who study these topics know this, but applied researchers may not.
+I skimmed the paper and the authors show how sum scores are factor scores when all item error variances are the same and all loadings are the same across items.</description>
     </item>
+    
     <item>
       <title>Little&#39;s MCAR test at different sample sizes</title>
       <link>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</guid>
-      <description>TLDR: Little&amp;rsquo;s MCAR test is unable to tell data that are MCAR from data that are MAR in small samples, but maintains the nominal error rate when null is true across a wide range of sample sizes.&#xA;I just found out about the R simglm package and decided to do a small simulation to test Little&amp;rsquo;s MCAR test1 under different sample sizes. I could have investigated heteroskedasticity in linear regression instead, and I probably will in the future.</description>
+      <description>TLDR: Little&amp;rsquo;s MCAR test is unable to tell data that are MCAR from data that are MAR in small samples, but maintains the nominal error rate when null is true across a wide range of sample sizes.
+ I just found out about the R simglm package and decided to do a small simulation to test Little&amp;rsquo;s MCAR test1 under different sample sizes. I could have investigated heteroskedasticity in linear regression instead, and I probably will in the future.</description>
     </item>
+    
     <item>
       <title>Theil-Sen regression in R</title>
       <link>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</guid>
-      <description>TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the Theil-Sen estimator.&#xA;A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:&#xA;Plot a line between all the points in your data Calculate the slope for each line The median slope is your regression slope Calculating the slope this way happens to be quite robust.</description>
+      <description>TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the Theil-Sen estimator.
+ A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:
+ Plot a line between all the points in your data Calculate the slope for each line The median slope is your regression slope  Calculating the slope this way happens to be quite robust.</description>
     </item>
+    
     <item>
       <title>Linear regression with violation of heteroskedasticity with small samples</title>
       <link>https://www.jamesuanhoro.com/post/2017/09/19/linear-regression-with-violation-of-heteroskedasticity-with-small-samples/</link>
       <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
+      
       <guid>https://www.jamesuanhoro.com/post/2017/09/19/linear-regression-with-violation-of-heteroskedasticity-with-small-samples/</guid>
-      <description>TLDR: In small samples, the wild bootstrap implemented in the R hcci package is a good bet when heteroskedasticity is a concern.&#xA;Today while teaching the multiple regression lab, I showed the class the standardized residuals versus standardized predictor plot SPSS lets you produce. It is the plot we typically use to assess homoskedasticity. The sample size for the analysis was 44. I mentioned how the regression slopes are fine under heteroskedasticity, but inference \((t, SE, p\)-value) may be problematic.</description>
+      <description>TLDR: In small samples, the wild bootstrap implemented in the R hcci package is a good bet when heteroskedasticity is a concern.
+ Today while teaching the multiple regression lab, I showed the class the standardized residuals versus standardized predictor plot SPSS lets you produce. It is the plot we typically use to assess homoskedasticity. The sample size for the analysis was 44. I mentioned how the regression slopes are fine under heteroskedasticity, but inference \((t, SE, p\)-value) may be problematic.</description>
     </item>
+    
   </channel>
 </rss>

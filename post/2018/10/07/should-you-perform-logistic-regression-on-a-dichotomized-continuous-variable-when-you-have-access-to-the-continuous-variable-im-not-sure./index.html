@@ -126,23 +126,23 @@ trans(lm(yc ~ x, dat))[&quot;x&quot;]
 <p><img src="/img/posts/linear_or/cor_s.png" alt="paires"></p>
 <p>We see that although all the methods claim <code>x</code> has a coefficient of 1 with <code>y</code> on average, the estimated coefficient when the threshold is very low is very weakly correlated with the estimated coefficient when the threshold is very high (.13). These are differences simply reflect the threshold and can be misleading in actual data analysis. One may believe widely different estimates at different thresholds represent different population parameters (true coefficients) when they do not. The method with which each method is most highly correlated is the linear regression method. The linear regression method is most strongly correlated with the middle threshold results. It is also the most stable and does not appear to be biased.</p>
 <hr>
-<p>Based on these results, one may believe that we should always model the continuous variable then transform our coefficients using Moser and Coombs&rsquo; formula if we want the log odds and/or odds ratio. Moser and Coombs reached that conclusion.</p>
+<p>Based on these results, one may believe that we should always model the continuous variable then transform our coefficients using Moser and Coombs' formula if we want the log odds and/or odds ratio. Moser and Coombs reached that conclusion.</p>
 <p>Substantively, should we trust the findings when the data are dichotomized at extreme thresholds? Or should we just go with the transformed linear regression coefficient?</p>
 <p>It is also possible that the relationship between the predictors and the outcome is different at different quantiles of the outcome &ndash; a situation quantile regression explores. One can use a quantile regression approach to see if this exists in the original continuous outcome.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
-<div class="footnotes" role="doc-endnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1">
+<li id="fn:1" role="doc-endnote">
 <p>Moser, B. K., &amp; Coombs, L. P. (2004). Odds ratios for a continuous outcome variable without dichotomizing. <em>Statistics in Medicine, 23</em>(12), 1843–1860. <a href="https://doi.org/10.1002/sim.1776">https://doi.org/10.1002/sim.1776</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn:2" role="doc-endnote">
 <p>Additionally, linear regression assumes normal error, not logistic but it turns out that does not matter much in practice.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3">
+<li id="fn:3" role="doc-endnote">
 <p>I modified the simulation above to include quantile regression at 25th and 75th percentiles; both had very little bias. The low quantile result had a strong correlation with the low threshold result, the high quantile result had a strong correlation with the high threshold result. The low and high quantile results were weakly correlated. This is all despite the fact that according to the regression specification, the coefficient of variable <code>x</code> was always the same.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
+</section>
 
 </main>
 

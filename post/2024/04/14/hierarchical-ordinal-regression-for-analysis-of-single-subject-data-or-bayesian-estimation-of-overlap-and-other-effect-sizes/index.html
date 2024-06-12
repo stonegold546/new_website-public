@@ -45,7 +45,7 @@ Given that data from SCD are often atypical, I&rsquo;ve thought such data are a 
 <p>Enter AERA 2024, I somehow found myself at a structured poster session for analysis of SCD. Very interesting work all around; count mixed models, model-based effect size estimation and benchmarks, single case mediation, &hellip; Made me want to share this again, and James P. encouraged me to send it his way. So here goes.</p>
 <h2 id="description-of-hierarchical-ordinal-model">Description of hierarchical ordinal model</h2>
 <p>I focus on simple designs: AB, ABAB, &hellip;</p>
-<p>I originally did this work with splines for approximating ordinal thresholds e.g.<sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and splines for modeling case-specific trajectories. But I settled for something more conventional in the SCD literature.</p>
+<p>I originally did this work with splines for approximating ordinal thresholds e.g.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, and splines for modeling case-specific trajectories. But I settled for something more conventional in the SCD literature.</p>
 <p>The model assumes case-specific intercepts and treatment effects, and I use hierarchical modeling to estimate both.
 Additionally, the data within each case are autocorrelated.</p>
 <p>First step is to transform the data to (dense) ranks.</p>
@@ -121,38 +121,38 @@ $$</p>
 <li>In limited trials, model runtime depends on the number of thresholds (in addition to the amount of data which is not usually much for SCD). But when using a spline to approximate the thresholds, the number of parameters can be held constant. See <a href="https://gist.github.com/jamesuanhoro/a304312d11cdea5815d34595eef20686">this gist</a> for some examples of using splines to approximate the thresholds, though I do not account for autocorrelation in these models. Instead, I have case-specific trajectories.</li>
 <li>Trying to capture autocorrelation on the latent scale is the reason for the multivariate normal approach. One could instead predict the current ordinal level using the previous ordinal level, see <a href="https://hbiostat.org/proj/covid19/ordmarkov.html">here for examples by Frank Harrell</a>.</li>
 </ul>
-<div class="footnotes" role="doc-endnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1">
+<li id="fn:1" role="doc-endnote">
 <p>Ordinal logistic regression for the two sample test is practically identical to the Mann-Whitney test, see: &lsquo;&lsquo;Whitehead, J. (1993). Sample size calculations for ordered categorical data. <em>Statistics in Medicine, 12</em>, 2257–2271&rsquo;&rsquo;. You can then think of ordinal regression as a way to extend non-parametric methods to more complex scenarios than simple unadjusted comparisons.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn:2" role="doc-endnote">
 <p>By unidimensional, I mean univariate data that reflects a single dimension. A counter example would be zero-inflated count data. Although seemingly univariate, such data reflect at least two dimensions.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3">
+<li id="fn:3" role="doc-endnote">
 <p>Heller, G. Z., Manuguerra, M., &amp; Chow, R. (2016). How to analyze the Visual Analogue Scale: Myths, truths and clinical relevance. <em>Scandinavian Journal of Pain, 13</em>(1), 67–75. <a href="https://doi.org/10.1016/J.SJPAIN.2016.06.012">https://doi.org/10.1016/J.SJPAIN.2016.06.012</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4">
+<li id="fn:4" role="doc-endnote">
 <p>Liu, Q., Shepherd, B. E., Li, C., &amp; Harrell, F. E. (2017). Modeling continuous response variables using ordinal regression. <em>Statistics in Medicine, 36</em>(27), 4316–4335. <a href="https://doi.org/10.1002/sim.7433">https://doi.org/10.1002/sim.7433</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5">
-<p>Manuguerra, M., &amp; Heller, G. Z. (2010). Ordinal regression models for continuous scales. <em>The International Journal of Biostatistics, 6</em>(1). <a href="https://doi.org/10.2202/1557-4679.1230">https://doi.org/10.2202/1557-4679.1230</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:5" role="doc-endnote">
+<p>Manuguerra, M., &amp; Heller, G. Z. (2010). Ordinal regression models for continuous scales. <em>The International Journal of Biostatistics, 6</em>(1). <a href="https://doi.org/10.2202/1557-4679.1230">https://doi.org/10.2202/1557-4679.1230</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6">
+<li id="fn:6" role="doc-endnote">
 <p>Uanhoro, J. O., &amp; Stone-Sabali, S. (2023). Beyond Group Mean Differences: A Demonstration With Scale Scores in Psychology. <em>Collabra: Psychology, 9</em>(1), 57610. <a href="https://doi.org/10.1525/collabra.57610">https://doi.org/10.1525/collabra.57610</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:7">
+<li id="fn:7" role="doc-endnote">
 <p>Albert, J., &amp; Chib, S. (1995). Bayesian residual analysis for binary response regression models. <em>Biometrika, 82</em>(4), 747–759.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:8">
+<li id="fn:8" role="doc-endnote">
 <p>One I cannot justify :).&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:9">
+<li id="fn:9" role="doc-endnote">
 <p>Tasky, K. K., Rudrud, E. H., Schulze, K. A., &amp; Rapp, J. T. (2008). Using Choice to Increase On-Task Behavior in Individuals with Traumatic Brain Injury. <em>Journal of Applied Behavior Analysis, 41</em>(2), 261–265. <a href="https://doi.org/10.1901/jaba.2008.41-261">https://doi.org/10.1901/jaba.2008.41-261</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
+</section>
 
 </main>
 

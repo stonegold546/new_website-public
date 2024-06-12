@@ -218,7 +218,7 @@ par(mfrow = c(1, 1))
 <p><img src="/img/posts/mle_het/Rplot02.png" alt="mle2"></p>
 <p>The treatment effects again have the same distribution. However, the p-values for the heteroskedastic MLE are much smaller, the heteroskedastic MLE has more statistical power to detect the treatment effect, compared to OLS.</p>
 <hr>
-<p>The final syntax below breaks the process above down one level. It is the same syntax for the faster <code>mle()</code> function in the <code>stats4</code> package. First, you specify a function for the negative log-likelihood (see <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> below), then pass this function to MLE. Doing things this way allows for more transparency.</p>
+<p>The final syntax below breaks the process above down one level. It is the same syntax for the faster <code>mle()</code> function in the <code>stats4</code> package. First, you specify a function for the negative log-likelihood (see <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> below), then pass this function to MLE. Doing things this way allows for more transparency.</p>
 <pre><code class="language-ruby">ll &lt;- function(b_int, b_treat, s_int, s_treat) {
   with(dat, -sum(dnorm(
     y, mean = b_int + b_treat * treat,
@@ -273,14 +273,14 @@ treat       -3.07179    0.29439 -10.434   &lt;2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 </code></pre>
 <p>In this situation, the dispersion is on the scale of the log variance, so one would have to square root the exponentiated group log variances to retrieve the group standard deviations above.</p>
-<div class="footnotes" role="doc-endnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1">
-<p>In parametric models, we typically assume a distribution is responsible for the observed data, and a lot of the time, we assume the normal distribution. Distributions are defined by their parameters, which are the mean and standard deviation for the normal. The question then is: what values of parameters (mean and standard deviation) maximize the likelihood of the data? In regression models, we are usually asking this question of parameters that predict the mean. If we assume observations are independent, then this likelihood is the product of the individual likelihoods. However, if we work with the log-likelihood, we simplify the problem (for man and machine) to the sum of the logged values instead of product. Next, instead of searching for parameters that maximize the log-likelihood (\(ll\)), we search for parameters that minimize the negative log-likelihood (\(-1 \times ll\)) - the same thing in reverse. I believe working with the \(-ll\) is largely because it is more conventional for optimization methods to search for minima than maxima. If you attempt to code this by hand using <code>optim()</code>, you can go either way.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1" role="doc-endnote">
+<p>In parametric models, we typically assume a distribution is responsible for the observed data, and a lot of the time, we assume the normal distribution. Distributions are defined by their parameters, which are the mean and standard deviation for the normal. The question then is: what values of parameters (mean and standard deviation) maximize the likelihood of the data? In regression models, we are usually asking this question of parameters that predict the mean. If we assume observations are independent, then this likelihood is the product of the individual likelihoods. However, if we work with the log-likelihood, we simplify the problem (for man and machine) to the sum of the logged values instead of product. Next, instead of searching for parameters that maximize the log-likelihood (\(ll\)), we search for parameters that minimize the negative log-likelihood (\(-1 \times ll\)) - the same thing in reverse. I believe working with the \(-ll\) is largely because it is more conventional for optimization methods to search for minima than maxima. If you attempt to code this by hand using <code>optim()</code>, you can go either way.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
+</section>
 
 </main>
 
