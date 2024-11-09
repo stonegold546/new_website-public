@@ -2,19 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.jamesuanhoro.com/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jamesuanhoro.com/tags/minorbsem/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jamesuanhoro.com/tags/misspecification/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jamesuanhoro.com/post/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jamesuanhoro.com/tags/small-variance-priors/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jamesuanhoro.com/tags/structural-equation-modeling/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jamesuanhoro.com/tags/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.jamesuanhoro.com/post/2024/11/08/the-limitations-of-small-variance-priors-lie-in-their-implementation/</loc>
+    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.jamesuanhoro.com/post/2024/04/14/hierarchical-ordinal-regression-for-analysis-of-single-subject-data-or-bayesian-estimation-of-overlap-and-other-effect-sizes/</loc>
     <lastmod>2024-04-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jamesuanhoro.com/tags/hierarchical-modeling/</loc>
     <lastmod>2024-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.jamesuanhoro.com/</loc>
-    <lastmod>2024-04-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.jamesuanhoro.com/tags/ordinal-regression/</loc>
-    <lastmod>2024-04-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.jamesuanhoro.com/post/</loc>
     <lastmod>2024-04-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jamesuanhoro.com/tags/single-case-design/</loc>
@@ -26,9 +44,6 @@
     <loc>https://www.jamesuanhoro.com/tags/stan/</loc>
     <lastmod>2024-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.jamesuanhoro.com/tags/</loc>
-    <lastmod>2024-04-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.jamesuanhoro.com/tags/aera/</loc>
     <lastmod>2023-05-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -38,16 +53,7 @@
     <loc>https://www.jamesuanhoro.com/tags/minor-factors/</loc>
     <lastmod>2023-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.jamesuanhoro.com/tags/minorbsem/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.jamesuanhoro.com/tags/misspecification/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.jamesuanhoro.com/tags/r-package/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.jamesuanhoro.com/tags/structural-equation-modeling/</loc>
     <lastmod>2023-05-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.jamesuanhoro.com/tags/wishart/</loc>

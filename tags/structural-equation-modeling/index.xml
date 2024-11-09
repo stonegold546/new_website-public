@@ -6,7 +6,17 @@
     <description>Recent content in structural-equation-modeling on James Uanhoro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/structural-equation-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/structural-equation-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The limitations of small variance priors lie in their implementation</title>
+      <link>https://www.jamesuanhoro.com/post/2024/11/08/the-limitations-of-small-variance-priors-lie-in-their-implementation/</link>
+      <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.jamesuanhoro.com/post/2024/11/08/the-limitations-of-small-variance-priors-lie-in-their-implementation/</guid>
+      <description>Thanks to Muthén &amp;amp; Asparouhov (2012), hereafter MA2012,1 small variance priors are a common feature of Bayesian SEMs. The idea is: when we are not sure that a parameter is zero, you can place a prior that attempts to constrain the parameter to zero. A non-zero parameter will hopefully escape the constraint, while zero parameters will have most of their posterior concentrated around zero.
+Estimation of parameters constrained to zero In latent variable models, we assume relations between observed items are captured or mediated via the latent variables.</description>
+    </item>
+    
     <item>
       <title>AERA 2023 Presentation: Modeling misspecification as a parameter in Bayesian SEMs</title>
       <link>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</link>

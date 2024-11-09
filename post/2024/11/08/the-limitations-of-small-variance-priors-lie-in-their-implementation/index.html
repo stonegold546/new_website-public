@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The limitations of small variance priors lie in their implementation | James Uanhoro</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/papers/">First-author papers</a></li>
+      
+      <li><a href="/post/">Blog posts</a></li>
+      
+      <li><a href="/projects/">Programming projects</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">The limitations of small variance priors lie in their implementation</span></h1>
+
+<h2 class="date">2024/11/08</h2>
+</div>
+
+<main>
+<p>Thanks to Muthén &amp; Asparouhov (2012), hereafter MA2012,<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> small variance priors are a common feature of Bayesian SEMs. The idea is: when we are not sure that a parameter is zero, you can place a prior that attempts to constrain the parameter to zero. A non-zero parameter will hopefully escape the constraint, while zero parameters will have most of their posterior concentrated around zero.</p>
+<h2 id="estimation-of-parameters-constrained-to-zero">Estimation of parameters constrained to zero</h2>
+<p>In latent variable models, we assume relations between observed items are captured or mediated via the latent variables. Assuming we have six items, we may assume the first three reflect latent variable 1, and the second three items reflect latent variable 2. The first three items have non-zero loadings on latent variable 1 and zero loadings on latent variable 2. And the second three items have zero loadings on latent variable 1 and non-zero loadings on latent variable 2.</p>
+<p>We assume the individual items may be correlated only because they either reflect the same latent variable or the different latent variables they reflect are correlated. In our example, if latent variable 1 and 2 have zero correlation, then items 1&ndash;3 should have no correlation to items 4&ndash;6.</p>
+<p>In practice, data tend to deviate from these clean hypotheses:</p>
+<ol>
+<li>Items may be residually correlated beyond the correlations implied by their latent variables relations and the items relations to the latent variables. For example, items 1 and 4 may share similar wording that induces respondents to respond to them similarly beyond what the latent variable relations imply.</li>
+<li>Items may reflect latent variables we hypothesized them to be unrelated to. For example, item 3 may reflect the second latent variable in addition to reflecting the first latent variable.</li>
+</ol>
+<p>To address these possibilities, one can place a small variance prior on all residual (cor-)relations between items, or on all loadings assumed to be zero. If any of these parameters are notably large, we should be able to identify them from their resulting posterior distributions.</p>
+<p>Small variance priors also show up in differential item functioning / measurement invariance analysis. There, we can place such a prior on the difference in a parameter across groups. If the difference is large enough, it should escape the constraint induced by the prior, suggesting differential functioning/non-invariance.</p>
+<h2 id="jorgensen--garnier-villarreal-2023">Jorgensen &amp; Garnier-Villarreal, 2023</h2>
+<p>Jorgensen &amp; Garnier-Villarreal (2023), hereafter JGV2023,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> assess the ability of small variance priors to deliver on these promises and find them wanting. I will focus on their first simulation study.</p>
+<h3 id="estimating-a-missing-cross-loading">Estimating a missing cross-loading</h3>
+<p>JGV2023 set up a six-item problem like in the example above, first three items reflect latent variable 1, second three reflect latent variable 2, all loadings are 0.7, latent variables are correlated at 0.25 and total variance of each item is 1.</p>
+<p>They also assume that item 3 may reflect latent variable 2, they vary the value of this cross-loading (which we will call <code>L3,2</code>) as a simulation condition: 0, 0.2, 0.5, 0.7.</p>
+<p>Ideally, a small variance prior applied to all cross-loadings should identify this parameter as non-zero when <code>L3,2</code> is not zero. They follow guidelines in MA2012: if the 95% interval on the parameter includes 0, they decide the approach has failed to detect that this cross-loading is non-zero.</p>
+<p>First, they find that this approach does not really improve over using modification indices to identify what changes to make to a model, i.e. add <code>L3,2</code> to the model as a pre-specified parameter.</p>
+<p>They also track the estimated value of <code>L3,2</code> and find that the estimated value is much lower than its true value using small variance priors.</p>
+<p>A related problem is: assuming a non-zero cross-loading is zero inflates the (cor-)relation between factors. So they track the estimated value of the correlation between both latent variables when using small variance priors on cross-loadings, and find this relation to be well above the correct 0.25. This value is sometimes as high as 0.5 when the true value of <code>L3,2</code> is 0.7.</p>
+<p>The results are bad, see a screenshot of Table 1 in their paper.</p>
+<p><img src="/img/posts/svp/jgv_tab_1.png" alt="JGV Table 1"></p>
+<p>I will now discuss some issues I have with small variance priors as implemented.</p>
+<h2 id="how-small-should-the-variance-in-my-small-variance-prior-be">How small should the variance in my small variance prior be?</h2>
+<p>This is one challenge with implementing small variance priors. Small variance priors usually take the form: \(\mathcal{N}(0, \sigma)\), where \(\sigma\) is small relative to the scale of the parameter.</p>
+<p>Assuming observed items have an SD close to 1 and latent variables are assumed standardized, loadings are akin to standardized regression coefficients in their scale. They tend to be larger than typical standardized regression coefficients, and salient loadings will tend to vary between 0.4 and 0.9 with 0.7 as a typical expected value.</p>
+<p>So a weakly informative prior on a loading might be: \(\mathcal{N}(0, 1)\) which assumes 95% chance the loadings lies between -2 and 2.</p>
+<p>A small variance prior might then be: \(\mathcal{N}(0, \sigma = 0.05)\) which assumes that loadings will mostly fall in the (-0.1, 0.1) interval.</p>
+<p>Different choices of \(\sigma\) will have different impacts on the resulting posterior distribution of the parameter that has a small variance prior placed on it. And Asparouhov, Muthén &amp; Morin (2015) recommend varying \(\sigma\) as a kind of sensitivity analysis.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>JGV2023 used four values of \(\sigma\) as one of their simulation conditions: 0.005, 0.05, 0.10, 0.15.</p>
+<p>This general approach is my first issue with the common implementation of small variance priors. A Bayesian solution is to learn the size of \(\sigma\) from the data, by placing a prior on \(\sigma\) &ndash; some citations within Bayesian SEM of this kind of practice.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>It would correspond to fairly standard Bayesian regularization / hierarchical modeling.</p>
+<h2 id="choice-of-distribution-of-small-variance-priors">Choice of distribution of small variance priors</h2>
+<p>Another issue is the choice of distribution. Priors correspond to beliefs about parameters. The degree to which the belief is incorrect will determine the degree to which the model is insightful.</p>
+<p>In the data generation process for JGV2023 (and in most model misspecification studies), researchers create misspecification by assuming a clean model, but the estimated model fails to incorporate a non-zero parameter. In this example, the mistake is to ignore the cross-loading of item 3 on latent variable 2. I personally don&rsquo;t think this is a realistic model of misspecification, preferring random models of misspecification; see Wu &amp; Browne (2015)<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> and the Uanhoro citation in <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<p>But let&rsquo;s work within this framework, all missing cross-loadings are zero, except for one of them. The distribution of these cross-loadings is definitely not normal. A small variance normal prior assumes that cross-loadings are on average zero, with varying gradations away from zero, no outliers. This assumption is generally realistic for misspecification that occurs in practice, but does not match the way SEM researchers generate misspecification.</p>
+<p>A prior that matches SEM researchers' model is one that assumes parameters are mostly zero with a few non-zero parameters. Several distributions attempt to approximate such an assumption: double-exponential (lasso),<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> (regularized) horseshoe,<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> generalized double-Pareto (GDP),<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>, &hellip;</p>
+<p><img src="/img/posts/svp/mfi_plot.png" alt="Prior comparison plot"></p>
+<p>As shown in the plot above, these alternatives to the distributions have a spike at zero, and heavy tails &ndash; they expect a couple large outliers. All distributions in the plot above have the same interquartile range. Yet we see that the lasso and GDP are expectant of outliers with since both distributions have larger tail densities than the normal distribution.</p>
+<p>When the GDP shape parameter is large (<code>GDP(1000)</code>), it matches the lasso distribution. When the GDP shape parameter is small (<code>GDP(2.00001)</code>), it has a larger spike around zero suggesting greater shrinkage of small parameters to 0 and is more expectant of outliers, suggesting less shrinkage of large parameters.</p>
+<p>Under these priors, the mode of the posterior distribution of zero parameters will be zero, and the posterior mode for non-zero parameters will be non-zero.</p>
+<p>I do not think these priors reflect my beliefs about misspecification. Models in practice tend to have several small-ish but non-zero missing parameters and a few larger missing parameters, matching the normal prior assumption or maybe a <em>t</em>-distribution.</p>
+<p>But simulation studies generate perfectly clean data, and the misspecification is due to the researcher&rsquo;s ignorance of one or two missing parameters. Well, if researchers generate data under such assumptions, then the priors should match these assumptions.</p>
+<p>Even if one believes the more realistic pattern of misspecification, one can &ndash; for pragmatic reasons &ndash; assume a spike-at-zero-heavy-tail distribution to separate small misspecifications from larger misspecifications. The small missing parameters will have posterior modes of 0, and the non-small missing parameters will have a non-zero posterior mode.</p>
+<p>This forms the basis of my attempt at repeating study 1 in JGV2023.</p>
+<h2 id="repeating-jgv2023">Repeating JGV2023</h2>
+<p>I repeat the study, but use a generalized double-Pareto prior on cross-loadings. Like JGV2023, I varied sample size between 50 and 1000.</p>
+<p>The parameters of the GDP prior were learned from the data. This feature is implemented in the <a href="https://jamesuanhoro.github.io/minorbsem/">minorbsem R package</a> &ndash; a Bayesian SEM package I created to estimate models like this. I have shared the simulation code as a gist:</p>
+<style type="text/css">
+  .gist-data {max-height: 200px;}
+</style>
+<script src="https://gist.github.com/jamesuanhoro/cc947b5ccc4c3c7dbc4f1b1f6c4b247c.js"></script>
+<p>I review the results from the study.</p>
+<h3 id="examining-posterior-modes">Examining posterior modes</h3>
+<p>First, I track the posterior mode of all cross-loadings. We can expect the posterior distribution of the cross-loadings of items 1 and 2 on latent variable 2 to be impacted by the presence of a non-zero cross-loading of item 3 on latent variable 2. So I track three sets of cross-loadings:</p>
+<ol>
+<li>Item 3 on latent variable 2 &ndash; focal cross-loading</li>
+<li>Items 1 and 2 on latent variable 2 &ndash; JGV2023 found them to be non-zero and negative when using small variance priors</li>
+<li>Items 4 &ndash; 6 on latent variable 1 &ndash; these cross-loadings should be minimally impacted</li>
+</ol>
+<p>The results are below:</p>
+<p><img src="/img/posts/svp/svp_01_01_post_mode.png" alt="Posterior mode plot"></p>
+<p>There are four panels, each panel represents a true level of <code>L3,2</code>. In the leftmost panel, <code>L3,2</code> is 0. In the rightmost panel, <code>L3,2</code> is .7.</p>
+<p>The solid line represents the posterior mode of <code>L3,2</code> and we find that on average, it is distinctly different from all other loadings. As sample size increases, it closely approximates the true parameter.</p>
+<p>We also find that the average posterior mode for all other cross-loadings is less than 0.01.</p>
+<p>This result is different from JGV2023&rsquo;s where the cross-loadings of items 1 and 2 on latent variable 2 were negative on average and <code>L3,2</code> was much smaller than its true value on average.</p>
+<p>The plot also reports the average correlation between the latent variables, ideally, 0.25. We consistently estimate an upwardly biased correlation of about 0.3. This result is nowhere as problematic as JGV2023&rsquo;s results which saw this correlation approach .5 in certain conditions.</p>
+<h3 id="how-often-does-the-model-identify-l32-as-having-the-largest-cross-loading">How often does the model identify <code>L3,2</code> as having the largest cross-loading?</h3>
+<p><img src="/img/posts/svp/svp_01_02_largest_mode.png" alt="Largest cross-loading"></p>
+<p>This plot shows that the model does a fairly good job of identifying <code>L3,2</code> as having the largest cross-loading. When <code>L3,2</code> is 0.5, the model identifies this parameter as having the largest cross-loading more than 60% of the time when the sample size is 50. By sample size of 125, the model identifies this parameter as having the largest cross-loading more than 90% of the time.</p>
+<h3 id="in-summary">In summary</h3>
+<p>My hope is that these results show that the right type of small variance prior lives up to its promise. A big part of the problems shown by JGV2023 stem from the inadequacy of the specific small variance prior to the specific problem.</p>
+<p>Part of the issue here is that the average Bayesian SEM user (i.e. not JGV) uses Mplus. And as far as I can tell, Mplus only permits the normal distribution for small variance priors and the variance has to be fixed a-priori. This limits the models we see in practice.</p>
+<p>Allowing more flexible small variance priors where the prior scale (and maybe shape) is learned from the data is not so hard to implement. Hopefully, we can see something like this in <a href="https://ecmerkle.github.io/blavaan/articles/cross_loadings_strong_priors.html">blavaan</a> in the future.</p>
+<h2 id="holzinger-swineford-example">Holzinger-Swineford example</h2>
+<p>I conclude with the Holzinger-Swineford example and assume the first three, second three and final three scores reflect the first, second and third latent variables respectively.</p>
+<p>When I estimate all cross-loadings using a generalized double-Pareto prior, the posterior modes of the resulting cross-loadings are:</p>
+<pre><code>       [,1]  [,2] [,3]
+ [1,]    NA  0.18 0.00
+ [2,]    NA -0.01 0.00
+ [3,]    NA  0.00 0.00
+ [4,]  0.00    NA 0.01
+ [5,] -0.02    NA 0.00
+ [6,]  0.02    NA 0.00
+ [7,]  0.00  0.00   NA
+ [8,]  0.00  0.00   NA
+ [9,]  0.32  0.00   NA
+</code></pre>
+<p>Only two parameters, the cross-loading of item 1 on the second latent variable and the cross-loading of item 9 on the first latent variable, escape the constraint.</p>
+<p>We can estimate a final model with both parameters included.</p>
+<p>The code for this example is:</p>
+<pre><code class="language-R">library(minorbsem)
+
+writeLines(base_formula &lt;- paste(
+  paste0(&quot;F1 =~ &quot;, paste0(&quot;x&quot;, 1:3, collapse = &quot; + &quot;)),
+  paste0(&quot;F2 =~ &quot;, paste0(&quot;x&quot;, 4:6, collapse = &quot; + &quot;)),
+  paste0(&quot;F3 =~ &quot;, paste0(&quot;x&quot;, 7:9, collapse = &quot; + &quot;)),
+  sep = &quot;\n&quot;
+))
+
+mod_base &lt;- minorbsem(
+  base_formula,
+  data = HS, method = &quot;none&quot;, seed = 1
+)
+
+mod_crossload &lt;- minorbsem(
+  base_formula,
+  data = HS, simple_struc = FALSE, method = &quot;none&quot;, seed = 1
+)
+
+# produces a warning
+load_modes &lt;- apply(
+  posterior::as_draws_matrix(mod_crossload@stan_fit$draws(&quot;Load_mat&quot;)), 2,
+  modeest::hsm
+)
+post_mode_mat &lt;- matrix(load_modes, 9)
+post_mode_mat[mod_crossload@data_list$loading_pattern != 0] &lt;- NA_real_
+round(post_mode_mat, 2)
+
+mod_simp &lt;- minorbsem(
+  paste(
+    base_formula,
+    &quot;F1 =~ x9&quot;, &quot;F2 =~ x1&quot;,
+    sep = &quot;\n&quot;
+  ),
+  data = HS, method = &quot;none&quot;, seed = 1
+)
+</code></pre>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Muthén, B., &amp; Asparouhov, T. (2012). Bayesian structural equation modeling: A more flexible representation of substantive theory. Psychological Methods, 17(3), 313–335. <a href="https://doi.org/10.1037/a0026802">https://doi.org/10.1037/a0026802</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Jorgensen, T. D., &amp; Garnier-Villarreal, M. (2023). Limited Utility of Small-Variance Priors to Detect Local Misspecification in Bayesian Structural Equation Models. In M. Wiberg, D. Molenaar, J. González, J.-S. Kim, &amp; H. Hwang (Eds.), Quantitative Psychology (pp. 85–95). Springer Nature Switzerland. <a href="https://doi.org/10.1007/978-3-031-27781-8_8">https://doi.org/10.1007/978-3-031-27781-8_8</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Asparouhov, T., Muthén, B., &amp; Morin, A. J. S. (2015). Bayesian Structural Equation Modeling With Cross-Loadings and Residual Covariances: Comments on Stromeyer et al. Journal of Management, 41(6), 1561–1577. <a href="https://doi.org/10.1177/0149206315591075">https://doi.org/10.1177/0149206315591075</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Placing priors to determine the size of \(\sigma\):</p>
+<ol>
+<li>Chen, J. (2021). A Bayesian Regularized Approach to Exploratory Factor Analysis in One Step. Structural Equation Modeling: A Multidisciplinary Journal, 28(4), 518–528. <a href="https://doi.org/10.1080/10705511.2020.1854763">https://doi.org/10.1080/10705511.2020.1854763</a></li>
+<li>Chen, J., Guo, Z., Zhang, L., &amp; Pan, J. (2021). A partially confirmatory approach to scale development with the Bayesian Lasso. Psychological Methods, 26, 210–235. <a href="https://doi.org/10.1037/met0000293">https://doi.org/10.1037/met0000293</a></li>
+<li>Uanhoro, J. O. (2024). Modeling Misspecification as a Parameter in Bayesian Structural Equation Models. Educational and Psychological Measurement, 84(2), 245–270. <a href="https://doi.org/10.1177/00131644231165306">https://doi.org/10.1177/00131644231165306</a></li>
+</ol>
+&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></li>
+<li id="fn:5" role="doc-endnote">
+<p>Wu, H., &amp; Browne, M. W. (2015). Quantifying Adventitious Error in a Covariance Structure as a Random Effect. Psychometrika, 80(3), 571–600. <a href="https://doi.org/10.1007/s11336-015-9451-3">https://doi.org/10.1007/s11336-015-9451-3</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>Park, T., &amp; Casella, G. (2008). The Bayesian lasso. Journal of the American Statistical Association, 103(482), 681–686. <a href="https://doi.org/10.1198/016214508000000337">https://doi.org/10.1198/016214508000000337</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>Piironen, J., &amp; Vehtari, A. (2017). Sparsity information and regularization in the horseshoe and other shrinkage priors. Electronic Journal of Statistics, 11(2), 5018–5051. <a href="https://doi.org/10.1214/17-EJS1337SI">https://doi.org/10.1214/17-EJS1337SI</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p>Armagan, A., Dunson, D. B., &amp; Lee, J. (2013). Generalized double Pareto shrinkage. Statistica Sinica, 23(1), 119–143.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</main>
+
+<script>talkyardServerUrl='https:\/\/comments-for-www-jamesuanhoro-com.talkyard.net';</script>
+<script async defer src="https://c1.ty-cdn.net/-/talkyard-comments.min.js"></script>
+
+<div class="talkyard-comments" data-discussion-id="" style="margin-top: 45px;">
+<noscript>Please enable Javascript to view comments.</noscript>
+<p style="margin-top: 25px; opacity: 0.9">Comments powered by
+<a href="https://www.talkyard.io">Talkyard</a>.</p>
+</div>
+
+  <footer>
+  <script defer src="//yihui.org/js/math-code.js"></script>
+<script defer src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script defer src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  James Uanhoro | Powered by: <a href="https://www.netlify.com/">Netlify</a>, <a href="https://gohugo.io/">Hugo</a>, <a href="https://themes.gohugo.io/hugo-xmin/">Hugo XMin</a>
+  
+  </footer>
+  </body>
+</html>
+
