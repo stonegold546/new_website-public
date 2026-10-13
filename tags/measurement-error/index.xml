@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>measurement-error on James Uanhoro</title>
-    <link>https://www.jamesuanhoro.com/tags/measurement-error/</link>
-    <description>Recent content in measurement-error on James Uanhoro</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/measurement-error/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Traditional SEM overly focuses on LISREL equations to the detriment of dealing with measurement error</title>
-      <link>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</link>
-      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</guid>
-      <description>So I don&amp;rsquo;t listen to the Quantitude podcast. It&amp;rsquo;s really difficult for me to get into it when my playlist includes podcasts with episodes titles like: Interstellar Jihad. However, I saw several tweets inspired by the SEM vs. regression episode. And I have too many thoughts, opinions, feelings to stay quiet. I lay them out here.
-   SEM is regression A case of cultural differences The actual difference is LISREL But too much LISREL, not enough measurement error LISREL works well for normal-data normal-model no manifest covariates models Covariance matrix \(\to\) LISREL likely fails with discrete indicators LISREL likely fails for SEMs with observed covariates (e.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Measurement-Error on James Uanhoro</title>
+		<link>https://www.jamesuanhoro.com/tags/measurement-error/</link>
+		<description>Recent content in Measurement-Error on James Uanhoro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 18 Jan 2021 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.jamesuanhoro.com/tags/measurement-error/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Traditional SEM overly focuses on LISREL equations to the detriment of dealing with measurement error</title>
+				<link>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</link>
+				<pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</guid>
+				<description>&lt;p&gt;So I don&amp;rsquo;t listen to the Quantitude podcast. It&amp;rsquo;s really difficult for me to get into it when my playlist includes podcasts with episodes titles like: &lt;a href=&#34;https://habibtiplease.substack.com/p/episode-16-interstellar-jihad/&#34;&gt;Interstellar Jihad&lt;/a&gt;. However, I saw several tweets inspired by the SEM vs. regression episode. And I have too many thoughts, opinions, feelings to stay quiet. I lay them out here.&lt;/p&gt;&#xA;&lt;div class=&#34;toc&#34;&gt;&#xA;    &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#sem-is-regression&#34;&gt;SEM is regression&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#a-case-of-cultural-differences&#34;&gt;A case of cultural differences&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#the-actual-difference-is-lisrel&#34;&gt;The actual difference is LISREL&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#but-too-much-lisrel-not-enough-measurement-error&#34;&gt;But too much LISREL, not enough measurement error&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#lisrel-works-well-for-normal-data-normal-model-no-manifest-covariates-models&#34;&gt;LISREL works well for normal-data normal-model no manifest covariates models&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#covariance-matrix-to-lisrel-likely-fails-with-discrete-indicators&#34;&gt;Covariance matrix \(\to\) LISREL likely fails with discrete indicators&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#lisrel-likely-fails-for-sems-with-observed-covariates-eg-mimic-model&#34;&gt;LISREL likely fails for SEMs with observed covariates (e.g. MIMIC model)&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#in-closing-&#34;&gt;In closing, &amp;hellip;&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h3 id=&#34;sem-is-regression&#34;&gt;SEM is regression&lt;/h3&gt;&#xA;&lt;p&gt;So this is pretty much established and known by methodologists. The basic SEM models are mathematically identical to very specific regression models e.g.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

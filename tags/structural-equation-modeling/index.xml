@@ -1,88 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>structural-equation-modeling on James Uanhoro</title>
-    <link>https://www.jamesuanhoro.com/tags/structural-equation-modeling/</link>
-    <description>Recent content in structural-equation-modeling on James Uanhoro</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 08 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/structural-equation-modeling/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The limitations of small variance priors lie in their implementation</title>
-      <link>https://www.jamesuanhoro.com/post/2024/11/08/the-limitations-of-small-variance-priors-lie-in-their-implementation/</link>
-      <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2024/11/08/the-limitations-of-small-variance-priors-lie-in-their-implementation/</guid>
-      <description>Thanks to Muthén &amp;amp; Asparouhov (2012), hereafter MA2012,1 small variance priors are a common feature of Bayesian SEMs. The idea is: when we are not sure that a parameter is zero, you can place a prior that attempts to constrain the parameter to zero. A non-zero parameter will hopefully escape the constraint, while zero parameters will have most of their posterior concentrated around zero.
-Estimation of parameters constrained to zero In latent variable models, we assume relations between observed items are captured or mediated via the latent variables.</description>
-    </item>
-    
-    <item>
-      <title>AERA 2023 Presentation: Modeling misspecification as a parameter in Bayesian SEMs</title>
-      <link>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</link>
-      <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</guid>
-      <description>Presentation Please find a copy of the AERA 2023 SEM SIG presentation here:
-Manuscript And a version of the manuscript here:
-The Open Science Framework repository for code in the paper is: https://osf.io/29ydb/
-R package The following links all have installation instructions:
- package website: https://jamesuanhoro.github.io/minorbsem/ r-universe: https://jamesuanhoro.r-universe.dev/minorbsem GitHub: https://github.com/jamesuanhoro/minorbsem/  Please reach out to me if you run into any problems during installation, package use.
-Older blog post about the package: The minorbsem package in R</description>
-    </item>
-    
-    <item>
-      <title>The minorbsem package in R</title>
-      <link>https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/</link>
-      <pubDate>Sun, 02 Apr 2023 08:43:23 -0500</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/</guid>
-      <description>I&amp;rsquo;ve been working on the minorbsem package in R since the start of February. It&amp;rsquo;s my first proper attempt at an R package. The package allows you fit Bayesian SEMs while accounting for:
- the possibility that minor factors influence the correlation between items (Uanhoro, 2023), or adventitious error (Wu &amp;amp; Browne, 2015).  One can also fit meta-analytic SEMs under similar assumptions (Uanhoro, 2022).
-The package is hosted on both GitHub and r-universe &amp;ndash; r-universe is really great.</description>
-    </item>
-    
-    <item>
-      <title>Hierarchical Covariance Estimation Approach to Meta-Analytic Structural Equation Modeling</title>
-      <link>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</link>
-      <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</guid>
-      <description>Manuscript Summary twitter thread Things I would change    Manuscript There is a non-pay-walled version below, but the version of record is available at the Structural Equation Modeling, http://www.tandfonline.com/10.1080/10705511.2022.2142128.
-Here&amp;rsquo;s the PDF and OSF repository with simulation and data analyses code in R.
-Also, some of the methods in this paper are now implemented in the minorbsem R package: website, r-universe.
-Some points about the paper from a Twitter thread I just typed up, and some things I would change at the bottom:</description>
-    </item>
-    
-    <item>
-      <title>Traditional SEM overly focuses on LISREL equations to the detriment of dealing with measurement error</title>
-      <link>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</link>
-      <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</guid>
-      <description>So I don&amp;rsquo;t listen to the Quantitude podcast. It&amp;rsquo;s really difficult for me to get into it when my playlist includes podcasts with episodes titles like: Interstellar Jihad. However, I saw several tweets inspired by the SEM vs. regression episode. And I have too many thoughts, opinions, feelings to stay quiet. I lay them out here.
-   SEM is regression A case of cultural differences The actual difference is LISREL But too much LISREL, not enough measurement error LISREL works well for normal-data normal-model no manifest covariates models Covariance matrix \(\to\) LISREL likely fails with discrete indicators LISREL likely fails for SEMs with observed covariates (e.</description>
-    </item>
-    
-    <item>
-      <title>A Chi-Square test of close fit in covariance-based SEM</title>
-      <link>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</link>
-      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</guid>
-      <description>TLDR: If you can assume close fit for the RMSEA, there is no reason why you cannot for a Chi-Square test in SEMs. The method to do this is relatively simple, and may cause SEM practitioners to reconsider the Chi-Square test.
- When assessing the fit of structural equation models, it is common for applied researchers to dismiss the \(\chi^2\) test because it will almost always detect a statistically significant discrepancy between your model and the data, given a large enough sample size.</description>
-    </item>
-    
-    <item>
-      <title>Misspecification and fit indices in covariance-based SEM</title>
-      <link>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</link>
-      <pubDate>Sat, 28 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</guid>
-      <description>TLDR: If you have good measurement quality, conventional benchmarks for fit indices may lead to bad decisions. Additionally, global fit indices are not informative for investigating misspecification.
- I am working with one of my professors, Dr. Jessica Logan, on a checklist for the developmental progress of young children. We intend to take this down the IRT route (or ordinal logistic regression), but currently, this is all part of a factor analysis course project.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Structural-Equation-Modeling on James Uanhoro</title>
+		<link>https://www.jamesuanhoro.com/tags/structural-equation-modeling/</link>
+		<description>Recent content in Structural-Equation-Modeling on James Uanhoro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 08 Nov 2024 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.jamesuanhoro.com/tags/structural-equation-modeling/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The limitations of small variance priors lie in their implementation</title>
+				<link>https://www.jamesuanhoro.com/post/2024/11/08/the-limitations-of-small-variance-priors-lie-in-their-implementation/</link>
+				<pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2024/11/08/the-limitations-of-small-variance-priors-lie-in-their-implementation/</guid>
+				<description>&lt;p&gt;Thanks to Muthén &amp;amp; Asparouhov (2012), hereafter MA2012,&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; small variance priors are a common feature of Bayesian SEMs. The idea is: when we are not sure that a parameter is zero, you can place a prior that attempts to constrain the parameter to zero. A non-zero parameter will hopefully escape the constraint, while zero parameters will have most of their posterior concentrated around zero.&lt;/p&gt;&#xA;&lt;h2 id=&#34;estimation-of-parameters-constrained-to-zero&#34;&gt;Estimation of parameters constrained to zero&lt;/h2&gt;&#xA;&lt;p&gt;In latent variable models, we assume relations between observed items are captured or mediated via the latent variables. Assuming we have six items, we may assume the first three reflect latent variable 1, and the second three items reflect latent variable 2. The first three items have non-zero loadings on latent variable 1 and zero loadings on latent variable 2. And the second three items have zero loadings on latent variable 1 and non-zero loadings on latent variable 2.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>AERA 2023 Presentation: Modeling misspecification as a parameter in Bayesian SEMs</title>
+				<link>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</link>
+				<pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2023/05/04/aera-2023-presentation-modeling-misspecification-as-a-parameter-in-bayesian-sems/</guid>
+				<description>&lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;&#xA;&lt;p&gt;Please find a copy of the AERA 2023 SEM SIG presentation here:&lt;/p&gt;&#xA;&lt;embed src=&#34;https://www.jamesuanhoro.com/pdf/bsem_fit_aera_present.pdf&#34; width=&#34;800px&#34; height=&#34;400px&#34; /&gt;&#xA;&lt;h2 id=&#34;manuscript&#34;&gt;Manuscript&lt;/h2&gt;&#xA;&lt;p&gt;And a version of the manuscript here:&lt;/p&gt;&#xA;&lt;embed src=&#34;https://www.jamesuanhoro.com/pdf/bsem_fit_3.pdf&#34; width=&#34;800px&#34; height=&#34;700px&#34; /&gt;&#xA;&lt;p&gt;The Open Science Framework repository for code in the paper is: &lt;a href=&#34;https://osf.io/29ydb/&#34;&gt;https://osf.io/29ydb/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;r-package&#34;&gt;R package&lt;/h2&gt;&#xA;&lt;p&gt;The following links all have installation instructions:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;package website: &lt;a href=&#34;https://jamesuanhoro.github.io/minorbsem/&#34;&gt;https://jamesuanhoro.github.io/minorbsem/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;r-universe: &lt;a href=&#34;https://jamesuanhoro.r-universe.dev/minorbsem&#34;&gt;https://jamesuanhoro.r-universe.dev/minorbsem&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/jamesuanhoro/minorbsem/&#34;&gt;https://github.com/jamesuanhoro/minorbsem/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Please reach out to me if you run into any problems during installation, package use.&lt;/p&gt;&#xA;&lt;p&gt;Older blog post about the package: &lt;a href=&#34;https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/&#34;&gt;The minorbsem package in R&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The minorbsem package in R</title>
+				<link>https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/</link>
+				<pubDate>Sun, 02 Apr 2023 08:43:23 -0500</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2023/04/02/the-minorbsem-package-in-r/</guid>
+				<description>&lt;p&gt;I&amp;rsquo;ve been working on the minorbsem package in R since the start of February.&#xA;It&amp;rsquo;s my first proper attempt at an R package.&#xA;The package allows you fit Bayesian SEMs while accounting for:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;the possibility that minor factors influence the correlation between items (Uanhoro, 2023), or&lt;/li&gt;&#xA;&lt;li&gt;adventitious error (Wu &amp;amp; Browne, 2015).&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;One can also fit meta-analytic SEMs under similar assumptions (Uanhoro, 2022).&lt;/p&gt;&#xA;&lt;p&gt;The package is hosted on both &lt;a href=&#34;https://github.com/jamesuanhoro/minorbsem/&#34;&gt;GitHub&lt;/a&gt; and&#xA;&lt;a href=&#34;https://jamesuanhoro.r-universe.dev/minorbsem&#34;&gt;r-universe&lt;/a&gt; &amp;ndash; r-universe is really great.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Hierarchical Covariance Estimation Approach to Meta-Analytic Structural Equation Modeling</title>
+				<link>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</link>
+				<pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2022/12/14/hierarchical-covariance-estimation-approach-to-meta-analytic-structural-equation-modeling/</guid>
+				<description>&lt;div class=&#34;toc&#34;&gt;&#xA;    &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#manuscript&#34;&gt;Manuscript&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#summary-twitter-thread&#34;&gt;Summary twitter thread&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;#things-i-would-change&#34;&gt;Things I would change&lt;/a&gt;&lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h2 id=&#34;manuscript&#34;&gt;Manuscript&lt;/h2&gt;&#xA;&lt;p&gt;There is a non-pay-walled version below, but the version of record is available at the Structural Equation Modeling, &lt;a href=&#34;http://www.tandfonline.com/10.1080/10705511.2022.2142128&#34;&gt;http://www.tandfonline.com/10.1080/10705511.2022.2142128&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the &lt;a href=&#34;https://www.jamesuanhoro.com/pdf/m_sem_hier_cov_2.pdf&#34;&gt;PDF&lt;/a&gt; and &lt;a href=&#34;https://osf.io/rstzk/&#34;&gt;OSF repository&lt;/a&gt; with simulation and data analyses code in R.&lt;/p&gt;&#xA;&lt;p&gt;Also, some of the methods in this paper are now implemented in the minorbsem R package: &lt;a href=&#34;https://jamesuanhoro.github.io/minorbsem/&#34;&gt;website&lt;/a&gt;, &lt;a href=&#34;https://jamesuanhoro.r-universe.dev/minorbsem&#34;&gt;r-universe&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;embed src=&#34;https://www.jamesuanhoro.com/pdf/m_sem_hier_cov_2.pdf&#34; width=&#34;800px&#34; height=&#34;700px&#34; /&gt;&#xA;&lt;p&gt;Some points about the paper from a &lt;a href=&#34;https://twitter.com/JamesUanhoro/status/1603021322724184064&#34;&gt;Twitter thread&lt;/a&gt; I just typed up, and some things I would change at the bottom:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Traditional SEM overly focuses on LISREL equations to the detriment of dealing with measurement error</title>
+				<link>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</link>
+				<pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2021/01/18/traditional-sem-overly-focuses-on-lisrel-equations-to-the-detriment-of-dealing-with-measurement-error/</guid>
+				<description>&lt;p&gt;So I don&amp;rsquo;t listen to the Quantitude podcast. It&amp;rsquo;s really difficult for me to get into it when my playlist includes podcasts with episodes titles like: &lt;a href=&#34;https://habibtiplease.substack.com/p/episode-16-interstellar-jihad/&#34;&gt;Interstellar Jihad&lt;/a&gt;. However, I saw several tweets inspired by the SEM vs. regression episode. And I have too many thoughts, opinions, feelings to stay quiet. I lay them out here.&lt;/p&gt;&#xA;&lt;div class=&#34;toc&#34;&gt;&#xA;    &lt;nav id=&#34;TableOfContents&#34;&gt;&#xA;  &lt;ul&gt;&#xA;    &lt;li&gt;&#xA;      &lt;ul&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#sem-is-regression&#34;&gt;SEM is regression&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#a-case-of-cultural-differences&#34;&gt;A case of cultural differences&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#the-actual-difference-is-lisrel&#34;&gt;The actual difference is LISREL&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#but-too-much-lisrel-not-enough-measurement-error&#34;&gt;But too much LISREL, not enough measurement error&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#lisrel-works-well-for-normal-data-normal-model-no-manifest-covariates-models&#34;&gt;LISREL works well for normal-data normal-model no manifest covariates models&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#covariance-matrix-to-lisrel-likely-fails-with-discrete-indicators&#34;&gt;Covariance matrix \(\to\) LISREL likely fails with discrete indicators&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#lisrel-likely-fails-for-sems-with-observed-covariates-eg-mimic-model&#34;&gt;LISREL likely fails for SEMs with observed covariates (e.g. MIMIC model)&lt;/a&gt;&lt;/li&gt;&#xA;        &lt;li&gt;&lt;a href=&#34;#in-closing-&#34;&gt;In closing, &amp;hellip;&lt;/a&gt;&lt;/li&gt;&#xA;      &lt;/ul&gt;&#xA;    &lt;/li&gt;&#xA;  &lt;/ul&gt;&#xA;&lt;/nav&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h3 id=&#34;sem-is-regression&#34;&gt;SEM is regression&lt;/h3&gt;&#xA;&lt;p&gt;So this is pretty much established and known by methodologists. The basic SEM models are mathematically identical to very specific regression models e.g.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>A Chi-Square test of close fit in covariance-based SEM</title>
+				<link>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</link>
+				<pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2017/11/16/a-chi-square-test-of-close-fit-in-covariance-based-sem/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR: If you can assume close fit for the RMSEA, there is no reason why you cannot for a Chi-Square test in SEMs. The method to do this is relatively simple, and may cause SEM practitioners to reconsider the Chi-Square test.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;When assessing the fit of structural equation models, it is common for applied researchers to dismiss the \(\chi^2\) test because it will almost always detect a statistically significant discrepancy between your model and the data, given a large enough sample size. This is because, almost always, our models are approximations of the data. If our model-implied covariance matrix actually matched the sample covariance matrix within sampling variability, the \(\chi^2\) test would not be statistically significant regardless of sample size.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Misspecification and fit indices in covariance-based SEM</title>
+				<link>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</link>
+				<pubDate>Sat, 28 Oct 2017 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2017/10/28/misspecification-and-fit-indices-in-covariance-based-sem/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR: If you have good measurement quality, conventional benchmarks for fit indices may lead to bad decisions. Additionally, global fit indices are not informative for &lt;em&gt;investigating&lt;/em&gt; misspecification.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;I am working with one of my professors, &lt;a href=&#34;http://statsineducation.tumblr.com/&#34;&gt;Dr. Jessica Logan&lt;/a&gt;, on a checklist for the developmental progress of young children. We intend to take this down the IRT route (or ordinal logistic regression), but currently, this is all part of a factor analysis course project. So I ran some CFA models, and was discussing model fit with Dr. Logan. I commented that factor loadings were generally high (1st quartile = .80, M/Mdn = .84), but initial model fit was inadequate to play the model fit game, for example, RMSEA &amp;gt; .06, &amp;hellip; She commented that she was not so worried by this combination: high loadings together with failure to meet conventional model fit guidelines. And pointed me towards a recent paper by Dan McNeish, Ji An and Gregory Hancock,&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; hereafter &lt;em&gt;MAH&lt;/em&gt;, - the paper is available on &lt;a href=&#34;https://www.researchgate.net/publication/311536084_The_Thorny_Relation_between_Measurement_Quality_and_Fit_Index_Cut-Offs_in_Latent_Variable_Models&#34;&gt;ResearchGate&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

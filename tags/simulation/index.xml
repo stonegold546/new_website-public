@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>simulation on James Uanhoro</title>
-    <link>https://www.jamesuanhoro.com/tags/simulation/</link>
-    <description>Recent content in simulation on James Uanhoro</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Should you perform logistic regression on a dichotomized continuous variable when you have access to the continuous variable? I&#39;m not sure.</title>
-      <link>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</link>
-      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</guid>
-      <description>See here for an update, I recommend not dichotomizing, but it pays to read this first.
-A standard situation in education or medicine is we have a continuous measure, but then we have cut-points on those continuous measures that are clinically/practically significant. An example is BMI where I hear 30 matters. You may have an achievement test with 70 as the pass score. When this happens, researchers may sometimes be interested in modeling BMI over 30 or pass/fail as the outcome of interest.</description>
-    </item>
-    
-    <item>
-      <title>Two group mean and variance comparisons</title>
-      <link>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</guid>
-      <description>Someone asked an interesting question on Cross Validated recently about comparing the means and variances of two groups. They had a substantive interest in exploring variance and mean differences between two groups. They were thinking about Shapiro-Wilk test to test the data for normality, Levene&amp;rsquo;s test or F-test for variance comparisons depending on the results of Shapiro-Wilk, and Mann-Whitney or Welch&amp;rsquo;s test for means comparisons depending on the Shapiro-Wilk.
-I gave a somewhat detailed answer and liked it, so pasting it here verbatim.</description>
-    </item>
-    
-    <item>
-      <title>Little&#39;s MCAR test at different sample sizes</title>
-      <link>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</guid>
-      <description>TLDR: Little&amp;rsquo;s MCAR test is unable to tell data that are MCAR from data that are MAR in small samples, but maintains the nominal error rate when null is true across a wide range of sample sizes.
- I just found out about the R simglm package and decided to do a small simulation to test Little&amp;rsquo;s MCAR test1 under different sample sizes. I could have investigated heteroskedasticity in linear regression instead, and I probably will in the future.</description>
-    </item>
-    
-    <item>
-      <title>Theil-Sen regression in R</title>
-      <link>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</guid>
-      <description>TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the Theil-Sen estimator.
- A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:
- Plot a line between all the points in your data Calculate the slope for each line The median slope is your regression slope  Calculating the slope this way happens to be quite robust.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Simulation on James Uanhoro</title>
+		<link>https://www.jamesuanhoro.com/tags/simulation/</link>
+		<description>Recent content in Simulation on James Uanhoro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.jamesuanhoro.com/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Should you perform logistic regression on a dichotomized continuous variable when you have access to the continuous variable? I&#39;m not sure.</title>
+				<link>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</link>
+				<pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2018/10/07/should-you-perform-logistic-regression-on-a-dichotomized-continuous-variable-when-you-have-access-to-the-continuous-variable-im-not-sure./</guid>
+				<description>&lt;p&gt;&lt;strong&gt;See &lt;a href=&#34;https://www.jamesuanhoro.com/post/2018/10/20/possibility-of-heteroskedasticity-is-a-good-reason-not-to-dichotomize-a-continuous-variable-for-use-as-outcome-in-logistic-regression./&#34;&gt;here&lt;/a&gt; for an update, I recommend not dichotomizing, but it pays to read this first.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;A standard situation in education or medicine is we have a continuous measure, but then we have cut-points on those continuous measures that are clinically/practically significant. An example is BMI where I hear 30 matters. You may have an achievement test with 70 as the pass score. When this happens, researchers may sometimes be interested in modeling BMI over 30 or pass/fail as the outcome of interest. The substantive question often falls under the lines of modeling the probability of someone exceeding/falling short of this clinically significant threshold. So we dichotomize the continuous measure and analyze the new binary response using something like logistic regression.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Two group mean and variance comparisons</title>
+				<link>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</link>
+				<pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</guid>
+				<description>&lt;p&gt;Someone asked an &lt;a href=&#34;https://stats.stackexchange.com/q/369804/162986&#34;&gt;interesting question on Cross Validated recently&lt;/a&gt; about comparing the means and variances of two groups. They had a substantive interest in exploring variance and mean differences between two groups. They were thinking about Shapiro-Wilk test to test the data for normality, Levene&amp;rsquo;s test or &lt;em&gt;F&lt;/em&gt;-test for variance comparisons depending on the results of Shapiro-Wilk, and Mann-Whitney or Welch&amp;rsquo;s test for means comparisons depending on the Shapiro-Wilk.&lt;/p&gt;&#xA;&lt;p&gt;I gave a somewhat detailed answer and liked it, so pasting it here verbatim.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Little&#39;s MCAR test at different sample sizes</title>
+				<link>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</link>
+				<pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2017/09/21/littles-mcar-test-at-different-sample-sizes/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR: Little&amp;rsquo;s MCAR test is unable to tell data that are MCAR from data that are MAR in small samples, but maintains the nominal error rate when null is true across a wide range of sample sizes.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;I just found out about the R &lt;a href=&#34;https://cran.r-project.org/web/packages/simglm/index.html&#34;&gt;simglm package&lt;/a&gt; and decided to do a small simulation to test Little&amp;rsquo;s MCAR test&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; under different sample sizes. I could have investigated heteroskedasticity in linear regression instead, and I probably will in the future. I was able to find some examples of researchers using Little&amp;rsquo;s MCAR test at small sample sizes, so I ran a toy simulation.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Theil-Sen regression in R</title>
+				<link>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</link>
+				<pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the &lt;code&gt;Theil-Sen estimator&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Plot a line between all the points in your data&lt;/li&gt;&#xA;&lt;li&gt;Calculate the slope for each line&lt;/li&gt;&#xA;&lt;li&gt;The median slope is your regression slope&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Calculating the slope this way happens to be quite robust. And when the errors are normally distributed and you have no outliers, the slope is very similar to OLS.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

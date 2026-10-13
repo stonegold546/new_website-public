@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>robust-regression on James Uanhoro</title>
-    <link>https://www.jamesuanhoro.com/tags/robust-regression/</link>
-    <description>Recent content in robust-regression on James Uanhoro</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 06 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jamesuanhoro.com/tags/robust-regression/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Two group mean and variance comparisons</title>
-      <link>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</link>
-      <pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</guid>
-      <description>Someone asked an interesting question on Cross Validated recently about comparing the means and variances of two groups. They had a substantive interest in exploring variance and mean differences between two groups. They were thinking about Shapiro-Wilk test to test the data for normality, Levene&amp;rsquo;s test or F-test for variance comparisons depending on the results of Shapiro-Wilk, and Mann-Whitney or Welch&amp;rsquo;s test for means comparisons depending on the Shapiro-Wilk.
-I gave a somewhat detailed answer and liked it, so pasting it here verbatim.</description>
-    </item>
-    
-    <item>
-      <title>Theil-Sen regression in R</title>
-      <link>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</link>
-      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</guid>
-      <description>TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the Theil-Sen estimator.
- A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:
- Plot a line between all the points in your data Calculate the slope for each line The median slope is your regression slope  Calculating the slope this way happens to be quite robust.</description>
-    </item>
-    
-    <item>
-      <title>Linear regression with violation of heteroskedasticity with small samples</title>
-      <link>https://www.jamesuanhoro.com/post/2017/09/19/linear-regression-with-violation-of-heteroskedasticity-with-small-samples/</link>
-      <pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jamesuanhoro.com/post/2017/09/19/linear-regression-with-violation-of-heteroskedasticity-with-small-samples/</guid>
-      <description>TLDR: In small samples, the wild bootstrap implemented in the R hcci package is a good bet when heteroskedasticity is a concern.
- Today while teaching the multiple regression lab, I showed the class the standardized residuals versus standardized predictor plot SPSS lets you produce. It is the plot we typically use to assess homoskedasticity. The sample size for the analysis was 44. I mentioned how the regression slopes are fine under heteroskedasticity, but inference \((t, SE, p\)-value) may be problematic.</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Robust-Regression on James Uanhoro</title>
+		<link>https://www.jamesuanhoro.com/tags/robust-regression/</link>
+		<description>Recent content in Robust-Regression on James Uanhoro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 06 Oct 2018 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.jamesuanhoro.com/tags/robust-regression/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Two group mean and variance comparisons</title>
+				<link>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</link>
+				<pubDate>Sat, 06 Oct 2018 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2018/10/06/two-group-mean-and-variance-comparisons/</guid>
+				<description>&lt;p&gt;Someone asked an &lt;a href=&#34;https://stats.stackexchange.com/q/369804/162986&#34;&gt;interesting question on Cross Validated recently&lt;/a&gt; about comparing the means and variances of two groups. They had a substantive interest in exploring variance and mean differences between two groups. They were thinking about Shapiro-Wilk test to test the data for normality, Levene&amp;rsquo;s test or &lt;em&gt;F&lt;/em&gt;-test for variance comparisons depending on the results of Shapiro-Wilk, and Mann-Whitney or Welch&amp;rsquo;s test for means comparisons depending on the Shapiro-Wilk.&lt;/p&gt;&#xA;&lt;p&gt;I gave a somewhat detailed answer and liked it, so pasting it here verbatim.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Theil-Sen regression in R</title>
+				<link>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</link>
+				<pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2017/09/21/theil-sen-regression-in-r/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR: When performing a simple linear regression, if you have any concern about outliers or heterosedasticity, consider the &lt;code&gt;Theil-Sen estimator&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;A simple linear regression estimator that is not commonly used or taught in the social sciences is the Theil-Sen estimator. This is a shame given that this estimator is very intuitive, once you know what a slope means. Three steps:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Plot a line between all the points in your data&lt;/li&gt;&#xA;&lt;li&gt;Calculate the slope for each line&lt;/li&gt;&#xA;&lt;li&gt;The median slope is your regression slope&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Calculating the slope this way happens to be quite robust. And when the errors are normally distributed and you have no outliers, the slope is very similar to OLS.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Linear regression with violation of heteroskedasticity with small samples</title>
+				<link>https://www.jamesuanhoro.com/post/2017/09/19/linear-regression-with-violation-of-heteroskedasticity-with-small-samples/</link>
+				<pubDate>Tue, 19 Sep 2017 00:00:00 +0000</pubDate>
+				<guid>https://www.jamesuanhoro.com/post/2017/09/19/linear-regression-with-violation-of-heteroskedasticity-with-small-samples/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR: In small samples, the &lt;code&gt;wild bootstrap&lt;/code&gt; implemented in the R &lt;code&gt;hcci&lt;/code&gt; package is a good bet when heteroskedasticity is a concern.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Today while teaching the multiple regression lab, I showed the class the standardized residuals versus standardized predictor plot SPSS lets you produce. It is the plot we typically use to assess homoskedasticity. The sample size for the analysis was 44. I mentioned how the regression slopes are fine under heteroskedasticity, but inference \((t, SE, p\)-value) may be problematic. Supplemental R material I created included how to use the &lt;code&gt;sandwich&lt;/code&gt; package to obtain heteroskedasticity-consistent standard errors (HCSEs). And after applying HC3 (or any of the HCs from 1 to 5), a regression coefficient was no longer statistically significant at \(\alpha=.05\)&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

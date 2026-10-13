@@ -70,9 +70,9 @@
 <p>It would correspond to fairly standard Bayesian regularization / hierarchical modeling.</p>
 <h2 id="choice-of-distribution-of-small-variance-priors">Choice of distribution of small variance priors</h2>
 <p>Another issue is the choice of distribution. Priors correspond to beliefs about parameters. The degree to which the belief is incorrect will determine the degree to which the model is insightful.</p>
-<p>In the data generation process for JGV2023 (and in most model misspecification studies), researchers create misspecification by assuming a clean model, but the estimated model fails to incorporate a non-zero parameter. In this example, the mistake is to ignore the cross-loading of item 3 on latent variable 2. I personally don&rsquo;t think this is a realistic model of misspecification, preferring random models of misspecification; see Wu &amp; Browne (2015)<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> and the Uanhoro citation in <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<p>In the data generation process for JGV2023 (and in most model misspecification studies), researchers create misspecification by assuming a clean model, but the estimated model fails to incorporate a non-zero parameter. In this example, the mistake is to ignore the cross-loading of item 3 on latent variable 2. I personally don&rsquo;t think this is a realistic model of misspecification, preferring random models of misspecification; see Wu &amp; Browne (2015)<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> and the Uanhoro citation in <sup id="fnref1:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
 <p>But let&rsquo;s work within this framework, all missing cross-loadings are zero, except for one of them. The distribution of these cross-loadings is definitely not normal. A small variance normal prior assumes that cross-loadings are on average zero, with varying gradations away from zero, no outliers. This assumption is generally realistic for misspecification that occurs in practice, but does not match the way SEM researchers generate misspecification.</p>
-<p>A prior that matches SEM researchers' model is one that assumes parameters are mostly zero with a few non-zero parameters. Several distributions attempt to approximate such an assumption: double-exponential (lasso),<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> (regularized) horseshoe,<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> generalized double-Pareto (GDP),<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>, &hellip;</p>
+<p>A prior that matches SEM researchers&rsquo; model is one that assumes parameters are mostly zero with a few non-zero parameters. Several distributions attempt to approximate such an assumption: double-exponential (lasso),<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> (regularized) horseshoe,<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> generalized double-Pareto (GDP),<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>, &hellip;</p>
 <p><img src="/img/posts/svp/mfi_plot.png" alt="Prior comparison plot"></p>
 <p>As shown in the plot above, these alternatives to the distributions have a spike at zero, and heavy tails &ndash; they expect a couple large outliers. All distributions in the plot above have the same interquartile range. Yet we see that the lasso and GDP are expectant of outliers with since both distributions have larger tail densities than the normal distribution.</p>
 <p>When the GDP shape parameter is large (<code>GDP(1000)</code>), it matches the lasso distribution. When the GDP shape parameter is small (<code>GDP(2.00001)</code>), it has a larger spike around zero suggesting greater shrinkage of small parameters to 0 and is more expectant of outliers, suggesting less shrinkage of large parameters.</p>
@@ -164,40 +164,40 @@ mod_simp &lt;- minorbsem(
   data = HS, method = &quot;none&quot;, seed = 1
 )
 </code></pre>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Muthén, B., &amp; Asparouhov, T. (2012). Bayesian structural equation modeling: A more flexible representation of substantive theory. Psychological Methods, 17(3), 313–335. <a href="https://doi.org/10.1037/a0026802">https://doi.org/10.1037/a0026802</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>Jorgensen, T. D., &amp; Garnier-Villarreal, M. (2023). Limited Utility of Small-Variance Priors to Detect Local Misspecification in Bayesian Structural Equation Models. In M. Wiberg, D. Molenaar, J. González, J.-S. Kim, &amp; H. Hwang (Eds.), Quantitative Psychology (pp. 85–95). Springer Nature Switzerland. <a href="https://doi.org/10.1007/978-3-031-27781-8_8">https://doi.org/10.1007/978-3-031-27781-8_8</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>Asparouhov, T., Muthén, B., &amp; Morin, A. J. S. (2015). Bayesian Structural Equation Modeling With Cross-Loadings and Residual Covariances: Comments on Stromeyer et al. Journal of Management, 41(6), 1561–1577. <a href="https://doi.org/10.1177/0149206315591075">https://doi.org/10.1177/0149206315591075</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>Placing priors to determine the size of \(\sigma\):</p>
 <ol>
 <li>Chen, J. (2021). A Bayesian Regularized Approach to Exploratory Factor Analysis in One Step. Structural Equation Modeling: A Multidisciplinary Journal, 28(4), 518–528. <a href="https://doi.org/10.1080/10705511.2020.1854763">https://doi.org/10.1080/10705511.2020.1854763</a></li>
 <li>Chen, J., Guo, Z., Zhang, L., &amp; Pan, J. (2021). A partially confirmatory approach to scale development with the Bayesian Lasso. Psychological Methods, 26, 210–235. <a href="https://doi.org/10.1037/met0000293">https://doi.org/10.1037/met0000293</a></li>
 <li>Uanhoro, J. O. (2024). Modeling Misspecification as a Parameter in Bayesian Structural Equation Models. Educational and Psychological Measurement, 84(2), 245–270. <a href="https://doi.org/10.1177/00131644231165306">https://doi.org/10.1177/00131644231165306</a></li>
 </ol>
-&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></li>
-<li id="fn:5" role="doc-endnote">
+&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></li>
+<li id="fn:5">
 <p>Wu, H., &amp; Browne, M. W. (2015). Quantifying Adventitious Error in a Covariance Structure as a Random Effect. Psychometrika, 80(3), 571–600. <a href="https://doi.org/10.1007/s11336-015-9451-3">https://doi.org/10.1007/s11336-015-9451-3</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
+<li id="fn:6">
 <p>Park, T., &amp; Casella, G. (2008). The Bayesian lasso. Journal of the American Statistical Association, 103(482), 681–686. <a href="https://doi.org/10.1198/016214508000000337">https://doi.org/10.1198/016214508000000337</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:7" role="doc-endnote">
+<li id="fn:7">
 <p>Piironen, J., &amp; Vehtari, A. (2017). Sparsity information and regularization in the horseshoe and other shrinkage priors. Electronic Journal of Statistics, 11(2), 5018–5051. <a href="https://doi.org/10.1214/17-EJS1337SI">https://doi.org/10.1214/17-EJS1337SI</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:8" role="doc-endnote">
+<li id="fn:8">
 <p>Armagan, A., Dunson, D. B., &amp; Lee, J. (2013). Generalized double Pareto shrinkage. Statistica Sinica, 23(1), 119–143.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </main>
 
